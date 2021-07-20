@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ogani | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/wwwroot/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/wwwroot/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="~/wwwroot/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="~/wwwroot/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="~/wwwroot/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/wwwroot/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="~/wwwroot/css/style.css" type="text/css">
+
+    <script src="~/wwwroot/fontawesome-free-5.15.3-web/js/fontawesome.min.js"></script>
+    <script src="https://kit.fontawesome.com/3d4065abd3.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        color: var(--text-color);
+        background-color: #f4f4f4;
+    }
+</style>
+<body>
+    <!-- Page Preloder -->
+
+    <div class="header">
+        <div class="mid-header d-flex wid_100 justify-content-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 pt-2">
+                        <a href="@Url.Action("Index","Home")">
+                            <img src="~/wwwroot/images/logo.jpg" alt="anh" width="130px" height="31px">
+                        </a>
+                    </div>
+                    <div class="col-md-5 pt-2">
+                        <form action="/search" method="get" class="input-group search-bar custom-input-group " role="search">
+                            <input type="text" name="q" value="" autocomplete="off" placeholder="Tìm kiếm sản phẩm..." class="input-group-field auto-search form-control " required="">
+                            <input type="hidden" name="type" value="product">
+                            <span class="input-group-btn btn-action">
+                                <button type="submit" class="btn text-white icon-fallback-text h-100">
+                                    <span class="fa fa-search"></span>
+                                </button>
+                            </span>
+                        </form>
+                    </div>
+                    <div class="col-md-5" style="padding-left: 50px;">
+                        <ul class="d-flex mb-0">
+                            <li>
+                                <a class="my-2 mr-3">
+                                    <img src="~/wwwroot/images/phone-call.jpg" width="24px" height="24px">
+                                </a>
+                                <div class="flex-colum">
+                                    <p class="mb-0 text-white"><strong>Hỗ trợ khách hàng</strong></p>
+                                    <a href="@Url.Action("Contact","Home")" class="text-waring"><strong style="color: white;">1900 866 888</strong></a>
+                                </div>
+                            </li>
+                            <li class="ml-3">
+                                <a class="my-2 mr-3">
+                                    <i class="fas fa-user-circle text-white"></i>
+                                </a>
+                                <div class="flex-colum">
+                                    <a href="@Url.Action("Acccount","Home")" class="text-waring"><strong style="color: white;">Tài Khoản</strong></a><br>
+                                    <a href="@Url.Action("Login","Home")" class="text-waring" style="font-size: 13px; color: white;">Đăng Nhập</a>
+                                </div>
+                            </li>
+                            <li class="mini-box ml-2">
+                                <a href="./shoping-cart.html" style="color: white;">
+                                    <div class=" d-flex ml-3">
+                                        <i class="fas fa-shopping-bag mr-2 my-2 "></i>
+                                        <a href="@Url.Action("Card","Home")">
+                                            <p class="mr-2 my-2">Giỏ Hàng</p>
+                                        </a>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header Section End -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 d-lg-block d-none navigation-wrapper pr-0" style="background-color: white;">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>Danh sách sản phẩm</span>
+                        </div>
+                        <ul>
+                            <li class="cha1">
+                                <a href="@Url.Action("Caterogy","Home")"><i class="fa fa-pencil mr-2"></i>Bút viết</a>
+                                <i class="fas fa-chevron-right float-right" data-toggle-submenu="" style="margin-top: -27px; margin-right: 20px;"></i>
+                                <ul class="con1">
+                                    <li class="submenu__item">
+                                        <a style="font-weight:bold;color:red;" class="link" href="/products/but-bi-thien-long-tl-08" title="BEST SELLER">
+                                            <span>BEST SELLER</span>
+                                            <img style="vertical-align:top;" src="https://file.hstatic.net/1000230347/file/flame-rev_780b5327e12f42a0908f5ac6707286d7.gif" width="15" height="17" alt="Hot Fire">
+                                        </a>
+                                    </li>
+                                    <li><a href="./shop-details.html">Bút bi</a></li>
+                                    <li><a href="./shop-details.html">Bút lông bảng</a></li>
+                                    <li><a href="#">Bút lông kim</a></li>
+                                    <li><a href="#">Bút luyện chữ</a></li>
+                                    <li><a href="#">Bút chì</a></li>
+                                    <li><a href="#">Bút dạ quang</a></li>
+                                    <li><a href="#">Bút xóa</a></li>
+                                    <li><a href="#">Bút sơn</a></li>
+                                    <li><a href="#">Bút Gel</a></li>
+                                </ul>
+                            </li>
+                            <li class="cha1">
+                                <a href="@Url.Action("Caterogy","Home")"><i class="fas fa-users mr-2"></i>Văn phòng phẩm</a>
+                                <i class="fas fa-chevron-right float-right" data-toggle-submenu="" style="margin-top: -27px; margin-right: 20px;"></i>
+                                <ul class="con2">
+                                    <li class="submenu__item">
+                                        <a style="font-weight:bold;color:red;" class="link" href="/products/but-bi-thien-long-tl-08" title="BEST SELLER">
+                                            <span>BEST SELLER</span>
+                                            <img style="vertical-align:top;" src="https://file.hstatic.net/1000230347/file/flame-rev_780b5327e12f42a0908f5ac6707286d7.gif" width="15" height="17" alt="Hot Fire">
+                                        </a>
+                                    </li>
+                                    <li><a href="#">Combo Văn phòng phẩm</a></li>
+                                    <li><a href="#">Bút viết</a></li>
+                                    <li><a href="#">Băng keo-hồ dán</a></li>
+                                    <li><a href="#">Chăm sóc cá nhân</a></li>
+                                    <li><a href="#">Phụ kiện</a></li>
+                                    <li><a href="#">Giấy văn phòng</a></li>
+                                    <li><a href="#">Dụng cụ văn phòng</a></li>
+                                    <li><a href="#">File bìa hồ sơ</a></li>
+                                    <li><a href="#">Thương hiệu</a></li>
+                                </ul>
+                            </li>
+                            <li class="cha1">
+                                <a href="@Url.Action("Caterogy","Home")"><i class="fas fa-gavel mr-2"></i>Đồ chơi</a>
+                                <i class="fas fa-chevron-right float-right" data-toggle-submenu="" style="margin-top: -27px; margin-right: 20px;"></i>
+                                <ul class="con3">
+                                    <li class="submenu__item">
+                                        <a style="font-weight:bold;color:red;" class="link" href="/products/but-bi-thien-long-tl-08" title="BEST SELLER">
+                                            <span>BEST SELLER</span>
+                                            <img style="vertical-align:top;" src="https://file.hstatic.net/1000230347/file/flame-rev_780b5327e12f42a0908f5ac6707286d7.gif" width="15" height="17" alt="Hot Fire">
+                                        </a>
+                                    </li>
+                                    <li><a href="#">Đồ chơi bé trai</a></li>
+                                    <li><a href="#">Đồ chơi bé gái</a></li>
+                                    <li><a href="#">Mô hình nhân vật</a></li>
+                                    <li><a href="#">Thương hiệu đồ chơi</a></li>
+                                </ul>
+                            </li>
+                            <li class="cha1">
+                                <a href="@Url.Action("Caterogy","Home")"><i class="fas fa-pen-fancy mr-2"></i>Sản phẩm cao cấp</a>
+                                <i class="fas fa-chevron-right float-right" data-toggle-submenu="" style="margin-top: -27px; margin-right: 20px;"></i>
+                                <ul class="con4">
+                                    <li class="submenu__item">
+                                        <a style="font-weight:bold;color:red;" class="link" href="/products/but-bi-thien-long-tl-08" title="BEST SELLER">
+                                            <span>BEST SELLER</span>
+                                            <img style="vertical-align:top;" src="https://file.hstatic.net/1000230347/file/flame-rev_780b5327e12f42a0908f5ac6707286d7.gif" width="15" height="17" alt="Hot Fire">
+                                        </a>
+                                    </li>
+                                    <li><a href="#">Bút bi cao cấp</a></li>
+                                    <li><a href="#">Bút máy cao cấp</a></li>
+                                    <li><a href="#">Phụ kiện bút cao cấp</a></li>
+                                    <li><a href="#">Bút Gel cao cấp</a></li>
+                                    <li><a href="#">Ruột bút cao cấp</a></li>
+                                    <li><a href="#">Bút cao cấp Parker</a></li>
+                                    <li><a href="#">Máy in</a></li>
+                                    <li><a href="#">Bút lông dầu</a></li>
+                                    <li><a href="#">Thương hiệu</a></li>
+                                </ul>
+                            </li>
+                            <li class="cha1">
+                                <a href="@Url.Action("Caterogy","Home")"><i class="fas fa-pencil-ruler mr-2"></i>Dụng cụ học tập</a>
+                                <i class="fas fa-chevron-right float-right" data-toggle-submenu="" style="margin-top: -27px; margin-right: 20px;"></i>
+                                <ul class="con5">
+                                    <li class="submenu__item">
+                                        <a style="font-weight:bold;color:red;" class="link" href="/products/but-bi-thien-long-tl-08" title="BEST SELLER">
+                                            <span>BEST SELLER</span>
+                                            <img style="vertical-align:top;" src="https://file.hstatic.net/1000230347/file/flame-rev_780b5327e12f42a0908f5ac6707286d7.gif" width="15" height="17" alt="Hot Fire">
+                                        </a>
+                                    </li>
+                                    <li><a href="#">Bút viết</a></li>
+                                    <li><a href="#">Giấy kiểm tra - Nhãn vở</a></li>
+                                    <li><a href="#">Bộ dụng cụ học tập</a></li>
+                                    <li><a href="#">Tập học sinh</a></li>
+                                    <li><a href="#">Dụng cụ thủ công</a></li>
+                                    <li><a href="#">Máy tính khoa học</a></li>
+                                    <li><a href="#">Ba lô</a></li>
+                                    <li><a href="#">Phụ kiện học sinh</a></li>
+                                    <li><a href="#">Thương hiệu</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-12 pl-lg-0">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="~/wwwroot/images/1.jpg" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="~/wwwroot/images/2.png" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="~/wwwroot/images/3.jpg" alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+    <!-- Categories Section Begin -->
+    @RenderBody();
+    <!-- Latest Product Section End -->
+    <!-- Footer Section Begin -->
+    <footer class="mid-footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 footer-click">
+                    <div class="logo-footer">
+                        <img src="~/wwwroot/images/footer_infor.png">
+                    </div>
+                    <div class="about-company">
+                        <p style="font-weight:bold;">Flexoffice.com - Website thương mại điện tử thuộc  Tập đoàn Thiên Long</p>
+                        <p>Công ty Cổ Phần Tập Đoàn Thiên Long </p>
+                        <p>GPĐKKD số 0301464830 do Sở KHĐT TP. Hồ Chí Minh cấp ngày 04/03/2005.</p>
+                        <p>Địa chỉ: Lô 6-8-10-12, Đường số 3, KCN Tân Tạo, Q.Bình Tân, TP. Hồ Chí Minh, Việt Nam</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-3 footer-click f-block f-support">
+                    <h4 class="title-menu clicked">
+                        HỖ TRỢ KHÁCH HÀNG
+                    </h4>
+                    <p>Hotline: 1900 866 819 </p>
+                    <p>salesonline@flexoffice.com.vn</p>
+                    <ul class="list-menu">
+                        <li class="li_menu">
+                            <a class="link" href="/pages/chuong-trinh-khach-hang-than-thiet" title="Chương trình khách hàng thân thiết">Chương trình khách hàng thân thiết</a>
+                        </li>
+                        <li class="li_menu">
+                            <a class="link" href="/pages/huong-dan-mua-hang" title="Hướng dẫn mua hàng">Hướng dẫn mua hàng</a>
+                        </li>
+                        <li class="li_menu">
+                            <a class="link" href="/pages/huong-dan-thanh-toan" title="Hướng dẫn thanh toán">Hướng dẫn thanh toán</a>
+                        </li>
+                        <li class="li_menu">
+                            <a class="link" href="/pages/chinh-sach-giao-hang" title="Chính sách giao hàng">Chính sách giao hàng</a>
+                        </li>
+                        <li class="li_menu">
+                            <a class="link" href="/pages/chinh-sach-doi-tra-hoan-tien" title="Chính sách đổi trả &amp; hoàn tiền">Chính sách đổi trả &amp; hoàn tiền</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-2 footer-click">
+                    <h4 class="title-menu clicked">
+                        VỀ FLEXOFFICE
+                    </h4>
+                    <ul class="list-menu">
+                        <li class="li_menu">
+                            <a class="link" href="/pages/gioi-thieu" title="Giới thiệu">Giới thiệu</a>
+                        </li>
+                        <li class="li_menu">
+                            <a class="link" href="http://flexoffice.com.vn/vat-pham-quang-cao-0-264-46.htm" title="Dịch vụ in ấn quảng cáo">Dịch vụ in ấn quảng cáo</a>
+                        </li>
+                        <li class="li_menu">
+                            <a class="link" href="/pages/chinh-sach-bao-mat" title="Chính sách bảo mật">Chính sách bảo mật</a>
+                        </li>
+                        <li class="li_menu">
+                            <a class="link" href="/pages/lien-he" title="Thông tin liên hệ">Thông tin liên hệ</a>
+                        </li>
+                        <li class="li_menu">
+                            <a class="link" href="/pages/diem-ban-parker-chinh-hang" title="Điểm bán PARKER">Điểm bán PARKER</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-3 footer-click">
+                    <h4 class="title-menu">
+                        LIÊN KẾT VỚI CHÚNG TÔI
+                    </h4>
+                    <ul class="follow_option d-flex flex-wrap align-items-center p-0 list-unstyled">
+                        <li>
+                            <a class="facebook link" href="https://www.facebook.com/Quy2k/"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li style="padding-left: 15px;">
+                            <a href="https://www.youtube.com/">
+                                <i class="fa fa-youtube-play" style="font-size:36px;color:red"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Js Plugins -->
+    <script src="~/wwwroot/js/jquery-3.3.1.min.js"></script>
+    <script src="~/wwwroot/js/bootstrap.min.js"></script>
+    <script src="~/wwwroot/js/jquery.nice-select.min.js"></script>
+    <script src="~/wwwroot/js/jquery-ui.min.js"></script>
+    <script src="~/wwwroot/js/jquery.slicknav.js"></script>
+    <script src="~/wwwroot/js/mixitup.min.js"></script>
+    <script src="~/wwwroot/js/owl.carousel.min.js"></script>
+    <script src="~/wwwroot/js/main.js"></script>
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

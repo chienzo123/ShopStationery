@@ -1,0 +1,342 @@
+﻿
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="page-header">Sản Phẩm</h1>
+            </div>
+            <div class="col-lg-4" style="padding-top: 60px;">
+                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#addnew" data-whatever="mdo"><i class="fab fa-product-hunt" style="margin-right: 5px;"></i>Thêm mới +</button>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Mã Danh Mục</th>
+                        <th scope="col">Mã Sản Phẩm</th>
+                        <th scope="col">Tên Sản Phẩm</th>
+                        <th scope="col">Giá</th>
+                        <th scope="col">Mô tả</th>
+                        <th scope="col">Ảnh</th>
+                        <th scope="col">Loại</th>
+                        <th scope="col">Chức năng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>M001</td>
+                        <td>S001</td>
+                        <td>Bút lông dầu Bizner BIZ-PM01</td>
+                        <td>141.000</td>
+                        <td>Sản phẩm đẹp</td>
+                        <td><img src="~/Areas/Admin/Alink/Images/but_long_dau_biz-pm01-02.jpg" width="100px" height="100px"></td>
+                        <td>Cái</td>
+                        <td class="flex-item">
+                            <a href="#" data-toggle="modal" data-target="#update" data-whatever="mdo">Sửa</a><p>|</p>
+                            <a href="#" data-toggle="modal" data-target="#detail" data-whatever="fat">Chi Tiết</a><p>|</p>
+                            <a href="" data-toggle="modal" data-target="#delete" data-whatever="delete">Xóa</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>M001</td>
+                        <td>S002</td>
+                        <td>Bút lông bảng Thiên Long WB-02/td>
+                        <td>141.000</td>
+                        <td>Sản phẩm đẹp</td>
+                        <td><img src="~/Areas/Admin/Alink/Images/but_long_bang_thien_long_wb-02__10_.jpg" width="100px" height="100px"></td>
+                        <td>Cái</td>
+                        <td class="flex-item">
+                            <a href="#" data-toggle="modal" data-target="#update" data-whatever="mdo">Sửa</a><p>|</p>
+                            <a href="#" data-toggle="modal" data-target="#detail" data-whatever="fat">Chi Tiết</a><p>|</p>
+                            <a href="" data-toggle="modal" data-target="#delete" data-whatever="delete">Xóa</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>M002</td>
+                        <td>S003</td>
+                        <td>Robot Khủng Long Bay BTI E2007-01</td>
+                        <td>141.000</td>
+                        <td>Sản phẩm đẹp</td>
+                        <td><img src="~/Areas/Admin/Alink/Images/e2007-01-b_9bbf20a938994356a1b7a0b492aad107_8934f18787c04a3eaf2feb3553b3cf9d.jpg" width="100px" height="100px"></td>
+                        <td>Combo</td>
+                        <td class="flex-item">
+                            <a href="#" data-toggle="modal" data-target="#update" data-whatever="mdo">Sửa</a><p>|</p>
+                            <a href="#" data-toggle="modal" data-target="#detail" data-whatever="fat">Chi Tiết</a><p>|</p>
+                            <a href="" data-toggle="modal" data-target="#delete" data-whatever="delete">Xóa</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /#page-wrapper -->
+    </div>
+<div class="modal fade" id="addnew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Thêm mới sản phẩm</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Mã danh mục:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputPassword" placeholder="Mã Danh Mục.....">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Mã sản phẩm:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputPassword" placeholder="Mã sản phẩm.....">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Tên sản phẩm:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputPassword" placeholder="Tên sản phẩm.....">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Giá:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputPassword" placeholder="Giá.....">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Mô tả:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputPassword" placeholder=".....">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Ảnh:</label>
+                        <div class="col-sm-8">
+                            <input type="file" class="form-control" id="inputPassword">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Loại:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputPassword" placeholder="....">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary">Thêm</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ========== -->
+<div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cập nhật sản phẩm</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Mã danh mục:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputPassword" placeholder="Mã Danh Mục.....">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Mã sản phẩm:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputPassword" placeholder="Mã sản phẩm.....">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Tên sản phẩm:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputPassword" placeholder="Tên sản phẩm.....">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Giá:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputPassword" placeholder="Giá.....">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Mô tả:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputPassword" placeholder=".....">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Ảnh:</label>
+                        <div class="col-sm-8">
+                            <input type="file" class="form-control" id="inputPassword">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Loại:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputPassword" placeholder="....">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ========== -->
+<div class="modal fade" id="detail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Chi tiết sản phẩm</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Mã danh mục:</label>
+                        <div class="col-sm-8">
+                            <label class="col-sm-4 col-form-label">M001</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Mã Sản Phẩm:</label>
+                        <div class="col-sm-8">
+                            <label class="col-sm-4 col-form-label">S001</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Tên Sản Phẩm:</label>
+                        <div class="col-sm-8">
+                            <label class="col-sm-4 col-form-label">Bút lông dầu Bizner BIZ-PM01</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Giá:</label>
+                        <div class="col-sm-8">
+                            <label class="col-sm-4 col-form-label">141000</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Mô tả:</label>
+                        <div class="col-sm-8">
+                            <label class="col-sm-4 col-form-label">Sản phẩm chất lượng cao</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Ảnh:</label>
+                        <div class="col-sm-8">
+                            <label class="col-sm-4 col-form-label"><img width="100px" height="100px" src="~/Areas/Admin/Alink/Images/but_long_bang_thien_long_wb-02__10_.jpg"></label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Loại:</label>
+                        <div class="col-sm-8">
+                            <label for="inputPassword" class="col-sm-4 col-form-label">Cái</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ========== -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Xóa sản phẩm</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Mã danh mục:</label>
+                        <div class="col-sm-8">
+                            <label class="col-sm-4 col-form-label">M001</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Mã Sản Phẩm:</label>
+                        <div class="col-sm-8">
+                            <label class="col-sm-4 col-form-label">S001</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Tên Sản Phẩm:</label>
+                        <div class="col-sm-8">
+                            <label class="col-sm-4 col-form-label">Bút lông dầu Bizner BIZ-PM01</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Giá:</label>
+                        <div class="col-sm-8">
+                            <label class="col-sm-4 col-form-label">141000</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Mô tả:</label>
+                        <div class="col-sm-8">
+                            <label class="col-sm-4 col-form-label">Sản phẩm chất lượng cao</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Ảnh:</label>
+                        <div class="col-sm-8">
+                            <label class="col-sm-4 col-form-label"><img width="100px" height="100px" src="./Images/but_long_bang_thien_long_wb-02__10_.jpg"></label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Loại:</label>
+                        <div class="col-sm-8">
+                            <label for="inputPassword" class="col-sm-4 col-form-label">Cái</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đồng ý</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    
+}
+
+<section class="section">
+    <div class="container margin-bottom-20 card py-20 mt-5">
+        <div class="wrap_background_aside margin-bottom-40 page_login">
+            <div class="heading-bar">
+                <h1 class="title_page mb-0">Đăng nhập tài khoản</h1>
+                <p class="mb-0">Bạn chưa có tài khoản <a href="@Url.Action("Register","Home")" class="btn-link-style btn-register" style="text-decoration: underline; "> Đăng ký tại đây</a></p>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 offset-md-3 py-3">
+
+                    <div class="page-login ">
+                        <div id="login">
+                            <form accept-charset="UTF-8" action="/account/login" id="customer_login" method="post">
+                                <input name="form_type" type="hidden" value="customer_login">
+                                <input name="utf8" type="hidden" value="✓">
+
+                                <div class="form-signup margin-bottom-15" style="color:red;">
+
+                                </div>
+                                <div class="form-signup clearfix">
+                                    <fieldset class="form-group">
+                                        <label>Email <span class="required">*</span></label>
+                                        <input type="email" pattern="[a-z0-9._%+-]+[a-z0-9.-]+\.[a-z]{2,63}$" class="form-control " value="" name="customer[email]" id="customer_email" placeholder="Email" required="">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>Mật khẩu <span class="required">*</span> </label>
+                                        <input type="password" class="form-control " value="" name="customer[password]" id="customer_password" placeholder="Mật khẩu" required="">
+                                        <small class="d-block my-2">Quên mật khẩu? Nhấn vào<a href="#" class="btn-link-style text-primary" onclick="showRecoverPasswordForm();return false;"> đây </a></small>
+                                    </fieldset>
+
+                                    <div class="pull-xs-left button_bottom a-center  mb-3">
+                                        <button class="btn btn-block btn-style  btn-login" type="submit" value="Đăng nhập">Đăng nhập</button>
+
+                                    </div>
+
+                                </div>
+                                <input id="577f47c01b2d45958c20b814862a3f52" name="g-recaptcha-response" type="hidden" value="03AGdBq26UWR7N8XscirTFEo5nR4mh2dt8vu2c5Owmmd2dnPhYcN6jLWMpMp4x_S_jW5QP0NMsr3V5dGmFUlJRHhSvWdoKKTkR_UET85JufLltzvyFwTcMOQlAMKNYav674ON6Hs8QTxrPXJyHzb0UtxWW7ymV045kvppQ88f_N7Lxmxhpqm93QrYCMQcZxifI92jCp8VxvayTSzYiBKpfikfMm9w4_o5PUHZu58vLXRd_O8QAgh7Hzg5aW5mgSPxGfenu7NMl799rOtTutuWsJIEZWCfkXWPO6J9au0rd5QuOYimXGwpHGK2Ryw6LkH_1DT-g6XjPjka1n9dA6NdeouhXaSxqPbIjldO6zWvT9FH0TH6X_XgUnc4RMeP14fQKYDyOv2tsdqCAVeZdGA8oSnWZ54Mj3KymtWjYW0EriwKuFNG643hOH2OtcboJc3l0tIp6rNm--xRs">
+                                <script src="https://www.google.com/recaptcha/api.js?render=6LdD18MUAAAAAHqKl3Avv8W-tREL6LangePxQLM-"></script>
+                                <script>grecaptcha.ready(function() {grecaptcha.execute('6LdD18MUAAAAAHqKl3Avv8W-tREL6LangePxQLM-', {action: 'submit'}).then(function(token) {document.getElementById('577f47c01b2d45958c20b814862a3f52').value = token;});});</script>
+                            </form>
+                        </div>
+
+                        <div id="recover-password" style="display:none;" class="form-signup page-login text-center">
+                            <h2>
+                                Đặt lại mật khẩu
+                            </h2>
+                            <p>
+                                Chúng tôi sẽ gửi cho bạn một email để kích hoạt việc đặt lại mật khẩu.
+                            </p>
+                            <form accept-charset="UTF-8" action="/account/recover" method="post">
+                                <input name="form_type" type="hidden" value="recover_customer_password">
+                                <input name="utf8" type="hidden" value="✓">
+
+                                <div class="form-signup" style="color: red;">
+
+                                </div>
+                                <div class="form-signup clearfix">
+                                    <fieldset class="form-group">
+                                        <input type="email" pattern="[a-z0-9._%+-]+[a-z0-9.-]+\.[a-z]{2,63}$" class="form-control form-control-lg" value="" name="Email" id="recover-email" placeholder="Email" required="">
+                                    </fieldset>
+                                </div>
+
+                                <div class="action_bottom my-3">
+                                    <input class="btn btn-style btn-recover btn-block" type="submit" value="Lấy lại mật khẩu">
+                                    <a href="#" class="btn btn-style link btn-style-active " onclick="hideRecoverPasswordForm();return false;">Quay lại</a>
+
+                                </div>
+
+                                <input id="94828cb18d894b1c95052197ed6964fe" name="g-recaptcha-response" type="hidden" value="03AGdBq27lDNlvaTI2cv62wBgI8xwyKL8vJZxSwzHOhhRVQ9dJ6jvL9FAy6uVR26rnVhhLE1h5NpmRIOf4W-tdYYlwItWtM_8lcLnIystFMSr5AnfA6okSIHTr5W5evJwnJ07nxRkod18BG-eYyDjccoPOwEYFCRhA3b5RKxZ6HoImDZW_acmn3fMx46r3LWNbBmKBj8JQRVh9jgPdCqL7yosO1IUzXiK63Qyc84tcLqOJuAJaQPJN6ezQb-VjJJ6_nOb6yuOFKiO80f-Zn-V5gjIN1pCNceBnrup_yXSqZfPW4l43ddmzh6htM5wMJNMOlG5O4DGtAG3xfis-Aj3iXYDpx2mUOBy6XEdt__CiRYGiSSElzyVw7n-YYSiTeErTvXfdNqNhisyjiYmMI49bmqKGmopBANLEHRcZHrztcvLvgJvP_vc9PI1MFjpngI48jyyk2avJ_vKC">
+                                <script src="https://www.google.com/recaptcha/api.js?render=6LdD18MUAAAAAHqKl3Avv8W-tREL6LangePxQLM-"></script>
+                                <script>grecaptcha.ready(function() {grecaptcha.execute('6LdD18MUAAAAAHqKl3Avv8W-tREL6LangePxQLM-', {action: 'submit'}).then(function(token) {document.getElementById('94828cb18d894b1c95052197ed6964fe').value = token;});});</script>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

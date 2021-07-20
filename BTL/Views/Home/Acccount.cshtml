@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Acccount";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="signup page_customer_account section">
+    <div class="container card p-3 mt-5" style="height: 380px;">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-lg-3 col-left-ac">
+                <div class="block-account">
+                    <h5 class="title-account">Trang tài khoản</h5>
+                    <p>
+                        Xin chào, <span style="color:#ec1c24;">Nguyễn Đăng Quý</span>&nbsp;!
+                    </p>
+                    <ul style="list-style: none;">
+                        <li>
+                            <a disabled="disabled" class="title-info active" href="#" style="color: black;">Thông tin tài khoản</a>
+                        </li>
+
+                        <li>
+                            <a class="title-info" href="#" style="color: black;">Sổ địa chỉ (1)</a>
+                        </li>
+                        <li style="padding-top: 22px; font-weight: 500; font-size: 17px;">
+                            <a href="@Url.Action("Login","Home")" title="Đăng xuất" class="font-weight: light" style="color: black;">
+                                <input class="btn btn-danger text-white" type="button" value="Đăng Xuất" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-9 col-right-ac">
+                <div id="b" class=" col-right-account border-0 margin-top-20">
+                    <div class="block-account">
+                        <div class="block-title-account"><h5>Tài khoản</h5></div>
+                        <div class="block-content form-signup">
+                            <p>Tên tài khoản: <strong style="line-height: 20px;"> Nguyễn Đăng Quý!</strong></p>
+                            <p>
+                                <i class="fa fa-home font-some" aria-hidden="true"></i>  <span>
+                                    Địa chỉ: Đông Anh, Hà Nội, Vietnam
+                                </span>
+                            </p>
+                            <p><i class="fa fa-mobile font-some" aria-hidden="true"></i> <span>Điện thoại: 0962139733</span> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>

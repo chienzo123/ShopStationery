@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="section">
+    <div class="container margin-bottom-20 card py-2">
+        <div class="wrap_background_aside margin-bottom-40 page_login">
+            <div class="heading-bar">
+                <h1 class="title_page mb-0">Đăng ký tài khoản</h1>
+                <span class="or">
+                    Bạn đã có tài khoản? Đăng nhập
+                    <a href="@Url.Action("Login","Home")" style="text-decoration: underline;" class="btn-link-style  btn-style margin-right-0">tại đây</a>
+                </span>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 offset-md-3 ">
+                    <div class="page-login py-3 ">
+                        <div id="login">
+                            <h2 class="text-center">
+                                Thông tin cá nhân
+                            </h2>
+                            <form accept-charset="UTF-8" action="/account" id="create_customer" method="post">
+                                <input name="form_type" type="hidden" value="create_customer">
+                                <input name="utf8" type="hidden" value="✓">
+
+                                <div class="form-signup " style="color:red;">
+
+                                </div>
+                                <div class="form-signup clearfix">
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                            <fieldset class="form-group">
+                                                <label>Họ <span class="required">*</span></label>
+                                                <input type="text" class="form-control form-control-lg" value="" name="customer[last_name]" id="lastName" placeholder="Họ" required="">
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <fieldset class="form-group">
+                                                <label>Tên <span class="required">*</span></label>
+                                                <input type="text" class="form-control form-control-lg" value="" name="customer[first_name]" id="firstName" placeholder="Tên" required="">
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                            <fieldset class="form-group">
+                                                <label>Số điện thoại <span class="required">*</span></label>
+                                                <input placeholder="Số điện thoại" type="text" pattern="\d+" id="Phone" class="form-control form-control-comment form-control-lg" name="customer[phone]" required="">
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                            <fieldset class="form-group">
+                                                <label>Email <span class="required">*</span></label>
+                                                <input type="email" pattern="[a-z0-9._%+-]+[a-z0-9.-]+\.[a-z]{2,63}$" class="form-control form-control-lg" value="" name="customer[email]" id="email" placeholder="Email" required="">
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                            <fieldset class="form-group">
+                                                <label>Mật khẩu <span class="required">*</span> </label>
+                                                <input type="password" class="form-control form-control-lg" value="" name="customer[password]" id="password" placeholder="Mật khẩu" required="">
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="section margin-top-10 button_bottom mt-3">
+                                        <button type="submit" value="Đăng ký" class="btn  btn-style  btn_register btn-block">Đăng ký</button>
+
+                                    </div>
+                                </div>
+                                <input id="3bf20c184e0a4db5903730d2a79e0050" name="g-recaptcha-response" type="hidden" value="03AGdBq26H9bxQvA7bOkpVewmGH-VMVrKur1VTsRhvt_YrkqF0VHaeS2gcZOkwAd-DDw-vNK0rhB4Q7kmPG0j5xnAiACmefXxgiGnur9ux34UtKZapllBcvpW5YbI0jyg38UwDJYLpbL1Iav4yU5sP8BdWgVTAmdT-IKR63bA_ycxBC66k9cDtfdAm-ShWm1XnqE6ytwMtQNkKfiQONnFLzXTlJ5VvijfgRIedU1ayfRZpQS_Zk6sYJXwpM8TXymOQzk9_E876iG4il1W8RAOmjQtY68wIRx0iLKeHFpDmWHk9scHRO5cpxz-j7pHE8lv9B36FDxLgFj-DZjjpn0EC6MW4UaBgBzlEPjh4Ct1OBRWQXdKNW5XyfoAzqwXFs4R0m7wRXEoWjCL8wp9njLVQphYPRYc1OeVIliNLD5HGBwh0-bpUJyRyi3hP3hf-a_Ds_Di9WKba-4G6">
+                                <script src="https://www.google.com/recaptcha/api.js?render=6LdD18MUAAAAAHqKl3Avv8W-tREL6LangePxQLM-"></script>
+                                <script>grecaptcha.ready(function() {grecaptcha.execute('6LdD18MUAAAAAHqKl3Avv8W-tREL6LangePxQLM-', {action: 'submit'}).then(function(token) {document.getElementById('3bf20c184e0a4db5903730d2a79e0050').value = token;});});</script>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

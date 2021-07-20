@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EEC47C2B-4622-4256-8853-EE1CED54CA0D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BTL</RootNamespace>
+    <AssemblyName>BTL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44311</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\dist\js\npm.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\Gruntfile.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\js\affix.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\js\alert.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\js\button.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\js\carousel.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\js\collapse.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\js\dropdown.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\js\modal.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\js\popover.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\js\scrollspy.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\js\tab.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\js\tooltip.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\js\transition.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\package.js" />
+    <Content Include="Areas\Admin\ALink\Css\dist\css\sb-admin-2.css" />
+    <Content Include="Areas\Admin\ALink\Css\dist\css\timeline.css" />
+    <Content Include="Areas\Admin\ALink\Css\dist\js\sb-admin-2.js" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\css\font-awesome.css" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\dist\jquery.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\dist\jquery.min.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\MIT-LICENSE.txt" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\ajax.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\ajax\jsonp.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\ajax\load.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\ajax\parseJSON.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\ajax\parseXML.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\ajax\script.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\ajax\var\nonce.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\ajax\var\rquery.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\ajax\xhr.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\attributes.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\attributes\attr.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\attributes\classes.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\attributes\prop.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\attributes\support.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\attributes\val.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\callbacks.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\core.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\core\access.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\core\init.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\core\parseHTML.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\core\ready.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\css.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\css\addGetHookIf.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\css\curCSS.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\css\defaultDisplay.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\css\support.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\css\swap.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\css\var\cssExpand.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\css\var\getStyles.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\css\var\isHidden.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\css\var\rmargin.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\data.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\data\accepts.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\data\Data.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\data\var\data_priv.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\data\var\data_user.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\deferred.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\deprecated.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\dimensions.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\effects.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\effects\animatedSelector.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\effects\Tween.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\event.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\event\ajax.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\event\alias.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\event\support.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\exports\amd.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\exports\global.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\intro.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\jquery.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\manipulation.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\manipulation\support.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\modernizr-2.6.2.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\offset.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\outro.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\queue.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\queue\delay.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\selector-native.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\selector-sizzle.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\selector.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\serialize.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\sizzle\dist\sizzle.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\sizzle\dist\sizzle.min.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\traversing.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\traversing\findFilter.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\var\arr.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\var\class2type.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\var\concat.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\var\hasOwn.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\var\indexOf.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\var\pnum.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\var\push.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\var\rnotwhite.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\var\slice.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\var\strundefined.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\var\support.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\var\toString.js" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\wrap.js" />
+    <Content Include="Areas\Admin\ALink\Css\metisMenu\dist\metisMenu.css" />
+    <Content Include="Areas\Admin\ALink\Css\metisMenu\dist\metisMenu.js" />
+    <Content Include="Areas\Admin\ALink\Css\metisMenu\dist\metisMenu.min.css" />
+    <Content Include="Areas\Admin\ALink\Css\metisMenu\dist\metisMenu.min.js" />
+    <Content Include="Areas\Admin\ALink\Css\metisMenu\Gruntfile.js" />
+    <Content Include="Areas\Admin\ALink\Css\metisMenu\src\metisMenu.css" />
+    <Content Include="Areas\Admin\ALink\Css\metisMenu\src\metisMenu.js" />
+    <Content Include="Areas\Admin\ALink\Images\1_75f9a54875ce43a98b4fb8be3ef6ffe1.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\1_8e9da82cde14443e83c6fcb45e7ace96.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\25_683210149e34429fbae334b848613400_dd8ac0ff2bb84f09b10680f9cadf4c5f.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\2_1ef9d2b0cbb041319cc8d88f4f3d3e19.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\2_fd6c4b3619ec49c2b09805bcdef32d2f.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\6_4d85900aedce45f2a9bca9dbcc2f1d24_6b5f045deee04159bd1dfcbfc29f3a00.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\but_da_quang_thien_long_hl-07__2_.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\but_long_bang_thien_long_wb-02__10_.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\but_long_bang_thien_long_wb-03__2_.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\but_long_dau_biz-pm01-02.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\e2003-01-d_07c944831c674a9c8a548467f0611407_0565923fdb6e4240a28d900842ad9216.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\e2005-01-d_f41c49a7cf6749108adbcf05016543ea_10a35aa142404ef59615f88b4ceccd6a.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\e2007-01-b_9bbf20a938994356a1b7a0b492aad107_8934f18787c04a3eaf2feb3553b3cf9d.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\fo-059vn_ba14a19b86144bfeb7858c0d305e4212 %281%29.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\fo-059vn_ba14a19b86144bfeb7858c0d305e4212.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\keo_duc_150y_1cuon_194b50346de94ff48f06309b22816020.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\keo_kho_thien_long_-_diem_10_g-014__7_.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\n_kim_tuyen_elmer_s_177.4_ml_do___dung_dich_elmer_s_tao_slime_258.77ml_a90c91af274c4bec9f8b4cc259877553_grande.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\tl-075_ae78f89101f44c268f5776f09bc60f55.jpg" />
+    <Content Include="Areas\Admin\ALink\Images\untitled-1_0b2d4ddbbca749779ca73e8b48bfc03e.jpg" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="wwwroot\css\bootstrap.min.css" />
+    <Content Include="wwwroot\css\elegant-icons.css" />
+    <Content Include="wwwroot\css\font-awesome.min.css" />
+    <Content Include="wwwroot\css\jquery-ui.min.css" />
+    <Content Include="wwwroot\css\nice-select.css" />
+    <Content Include="wwwroot\css\owl.carousel.min.css" />
+    <Content Include="wwwroot\css\slicknav.min.css" />
+    <Content Include="wwwroot\css\style.css" />
+    <Content Include="wwwroot\fonts\ElegantIcons.svg" />
+    <Content Include="wwwroot\fonts\fontawesome-webfont.svg" />
+    <Content Include="wwwroot\images\1.jpg" />
+    <Content Include="wwwroot\images\2.png" />
+    <Content Include="wwwroot\images\3.jpg" />
+    <Content Include="wwwroot\images\Binhnuoc.jpg" />
+    <Content Include="wwwroot\images\bongoi.jpg" />
+    <Content Include="wwwroot\images\brand_1.jpg" />
+    <Content Include="wwwroot\images\brand_2.jpg" />
+    <Content Include="wwwroot\images\brand_3.jpg" />
+    <Content Include="wwwroot\images\brand_4.jpg" />
+    <Content Include="wwwroot\images\butbi.jpeg" />
+    <Content Include="wwwroot\images\butchigo.jpg" />
+    <Content Include="wwwroot\images\Butgel.jpg" />
+    <Content Include="wwwroot\images\ButgelB.jpg" />
+    <Content Include="wwwroot\images\butgelxoa.jpg" />
+    <Content Include="wwwroot\images\butgo.jpg" />
+    <Content Include="wwwroot\images\butlong.jpg" />
+    <Content Include="wwwroot\images\butlongkim.jpg" />
+    <Content Include="wwwroot\images\butsap.jpg" />
+    <Content Include="wwwroot\images\butviet.jpg" />
+    <Content Include="wwwroot\images\băngkeo.jpg" />
+    <Content Include="wwwroot\images\combo.jpg" />
+    <Content Include="wwwroot\images\convat.jpg" />
+    <Content Include="wwwroot\images\dochoi.jpg" />
+    <Content Include="wwwroot\images\footer_infor.png" />
+    <Content Include="wwwroot\images\logo.jpg" />
+    <Content Include="wwwroot\images\Máyin.jpg" />
+    <Content Include="wwwroot\images\ongmuc.jpg" />
+    <Content Include="wwwroot\images\phone-call.jpg" />
+    <Content Include="wwwroot\images\sapmau.jpg" />
+    <Content Include="wwwroot\images\section_hot.jpg" />
+    <Content Include="wwwroot\images\section_hot_banner.png" />
+    <Content Include="wwwroot\images\section_pro_banner.jpg" />
+    <Content Include="wwwroot\images\Xaphong.jpg" />
+    <Content Include="wwwroot\js\bootstrap.min.js" />
+    <Content Include="wwwroot\js\jquery-3.3.1.min.js" />
+    <Content Include="wwwroot\js\jquery-ui.min.js" />
+    <Content Include="wwwroot\js\jquery.nice-select.min.js" />
+    <Content Include="wwwroot\js\jquery.slicknav.js" />
+    <Content Include="wwwroot\js\main.js" />
+    <Content Include="wwwroot\js\mixitup.min.js" />
+    <Content Include="wwwroot\js\owl.carousel.min.js" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\.bower.json" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\bower.json" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\grunt\.jshintrc" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\grunt\configBridge.json" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\js\.jscsrc" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\js\.jshintrc" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\.csscomb.json" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\.csslintrc" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\alerts.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\badges.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\bootstrap.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\button-groups.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\buttons.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\carousel.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\close.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\code.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\component-animations.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\dropdowns.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\forms.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\glyphicons.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\grid.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\input-groups.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\jumbotron.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\labels.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\list-group.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\media.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\alerts.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\buttons.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\center-block.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\forms.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\gradients.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\grid.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\image.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\labels.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\list-group.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\opacity.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\pagination.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\panels.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\resize.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\size.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\table-row.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\modals.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\navbar.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\navs.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\normalize.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\pager.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\pagination.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\panels.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\popovers.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\print.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\progress-bars.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\responsive-embed.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\scaffolding.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\tables.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\theme.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\thumbnails.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\tooltip.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\type.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\utilities.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\variables.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\less\wells.less" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\LICENSE" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\package.json" />
+    <Content Include="Areas\Admin\ALink\Css\bootstrap\README.md" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\.bower.json" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\.gitignore" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\.npmignore" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\bower.json" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\less\core.less" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\less\extras.less" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\less\fixed-width.less" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\less\font-awesome.less" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\less\icons.less" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\less\larger.less" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\less\list.less" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\less\mixins.less" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\less\path.less" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\less\spinning.less" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\less\stacked.less" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\less\variables.less" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\scss\_core.scss" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\scss\_extras.scss" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\scss\_icons.scss" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\scss\_larger.scss" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\scss\_list.scss" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\scss\_mixins.scss" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\scss\_path.scss" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\scss\_spinning.scss" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\scss\_stacked.scss" />
+    <Content Include="Areas\Admin\ALink\Css\font-awesome\scss\_variables.scss" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\.bower.json" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\bower.json" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\dist\jquery.min.map" />
+    <Content Include="Areas\Admin\ALink\Css\jquery\src\sizzle\dist\sizzle.min.map" />
+    <Content Include="Areas\Admin\ALink\Css\metisMenu\.bower.json" />
+    <Content Include="Areas\Admin\ALink\Css\metisMenu\bower.json" />
+    <Content Include="Areas\Admin\ALink\Css\metisMenu\LICENSE" />
+    <Content Include="Areas\Admin\ALink\Css\metisMenu\package.json" />
+    <Content Include="Areas\Admin\ALink\Css\metisMenu\README.md" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Product.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Caterogy.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Account.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Card.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Login.cshtml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="wwwroot\fonts\ElegantIcons.eot" />
+    <Content Include="wwwroot\fonts\ElegantIcons.ttf" />
+    <Content Include="wwwroot\fonts\ElegantIcons.woff" />
+    <Content Include="wwwroot\fonts\fontawesome-webfont.eot" />
+    <Content Include="wwwroot\fonts\fontawesome-webfont.ttf" />
+    <Content Include="wwwroot\fonts\fontawesome-webfont.woff" />
+    <Content Include="wwwroot\fonts\fontawesome-webfont.woff2" />
+    <Content Include="wwwroot\fonts\FontAwesome.otf" />
+    <Content Include="wwwroot\sass\style.scss" />
+    <Content Include="wwwroot\sass\_base.scss" />
+    <Content Include="wwwroot\sass\_breadcrumb.scss" />
+    <Content Include="wwwroot\sass\_checkout.scss" />
+    <Content Include="wwwroot\sass\_contact.scss" />
+    <Content Include="wwwroot\sass\_footer.scss" />
+    <Content Include="wwwroot\sass\_header.scss" />
+    <Content Include="wwwroot\sass\_hero.scss" />
+    <Content Include="wwwroot\sass\_home-page.scss" />
+    <Content Include="wwwroot\sass\_mixins.scss" />
+    <Content Include="wwwroot\sass\_responsive.scss" />
+    <Content Include="wwwroot\sass\_shop-details.scss" />
+    <Content Include="wwwroot\sass\_shop-grid.scss" />
+    <Content Include="wwwroot\sass\_shoping-cart.scss" />
+    <Content Include="wwwroot\sass\_sidebar.scss" />
+    <Content Include="wwwroot\sass\_variable.scss" />
+    <Content Include="Views\Home\Caterogy.cshtml" />
+    <Content Include="Views\Home\Oder.cshtml" />
+    <Content Include="Views\Home\Card.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Acccount.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62090</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44311/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
