@@ -77,3 +77,7 @@ D:\Lập Trình Ứng Dụng trên web\BTL\BTL\obj\Debug\BTL.csproj.CopyComplete
 D:\Lập Trình Ứng Dụng trên web\BTL\BTL\obj\Debug\BTL.dll
 D:\Lập Trình Ứng Dụng trên web\BTL\BTL\obj\Debug\BTL.pdb
 D:\Lập Trình Ứng Dụng trên web\BTL\BTL\obj\Debug\BTL.csproj.AssemblyReference.cache
+D:\Lập Trình Ứng Dụng trên web\BTL\BTL\bin\EntityFramework.dll
+D:\Lập Trình Ứng Dụng trên web\BTL\BTL\bin\EntityFramework.SqlServer.dll
+D:\Lập Trình Ứng Dụng trên web\BTL\BTL\bin\EntityFramework.xml
+D:\Lập Trình Ứng Dụng trên web\BTL\BTL\bin\EntityFramework.SqlServer.xml

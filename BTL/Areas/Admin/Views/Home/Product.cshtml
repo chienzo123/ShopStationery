@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<BTL.Areas.Admin.Modal.SanPham>
 @{
     ViewBag.Title = "Product";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -20,64 +20,57 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Mã Danh Mục</th>
-                        <th scope="col">Mã Sản Phẩm</th>
-                        <th scope="col">Tên Sản Phẩm</th>
-                        <th scope="col">Giá</th>
-                        <th scope="col">Mô tả</th>
-                        <th scope="col">Ảnh</th>
-                        <th scope="col">Loại</th>
-                        <th scope="col">Chức năng</th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DanhMuc.TenDanhMuc)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TenSP)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Gia)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MoTa)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Anh)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Loai)
+                        </th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>M001</td>
-                        <td>S001</td>
-                        <td>Bút lông dầu Bizner BIZ-PM01</td>
-                        <td>141.000</td>
-                        <td>Sản phẩm đẹp</td>
-                        <td><img src="~/Areas/Admin/Alink/Images/but_long_dau_biz-pm01-02.jpg" width="100px" height="100px"></td>
-                        <td>Cái</td>
-                        <td class="flex-item">
-                            <a href="#" data-toggle="modal" data-target="#update" data-whatever="mdo">Sửa</a><p>|</p>
-                            <a href="#" data-toggle="modal" data-target="#detail" data-whatever="fat">Chi Tiết</a><p>|</p>
-                            <a href="" data-toggle="modal" data-target="#delete" data-whatever="delete">Xóa</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>M001</td>
-                        <td>S002</td>
-                        <td>Bút lông bảng Thiên Long WB-02/td>
-                        <td>141.000</td>
-                        <td>Sản phẩm đẹp</td>
-                        <td><img src="~/Areas/Admin/Alink/Images/but_long_bang_thien_long_wb-02__10_.jpg" width="100px" height="100px"></td>
-                        <td>Cái</td>
-                        <td class="flex-item">
-                            <a href="#" data-toggle="modal" data-target="#update" data-whatever="mdo">Sửa</a><p>|</p>
-                            <a href="#" data-toggle="modal" data-target="#detail" data-whatever="fat">Chi Tiết</a><p>|</p>
-                            <a href="" data-toggle="modal" data-target="#delete" data-whatever="delete">Xóa</a>
-                        </td>
-                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DanhMuc.TenDanhMuc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TenSP)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Gia)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MoTa)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Anh)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Loai)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.MaSP }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.MaSP }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
+                            </td>
+                        </tr>
+                    }
 
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>M002</td>
-                        <td>S003</td>
-                        <td>Robot Khủng Long Bay BTI E2007-01</td>
-                        <td>141.000</td>
-                        <td>Sản phẩm đẹp</td>
-                        <td><img src="~/Areas/Admin/Alink/Images/e2007-01-b_9bbf20a938994356a1b7a0b492aad107_8934f18787c04a3eaf2feb3553b3cf9d.jpg" width="100px" height="100px"></td>
-                        <td>Combo</td>
-                        <td class="flex-item">
-                            <a href="#" data-toggle="modal" data-target="#update" data-whatever="mdo">Sửa</a><p>|</p>
-                            <a href="#" data-toggle="modal" data-target="#detail" data-whatever="fat">Chi Tiết</a><p>|</p>
-                            <a href="" data-toggle="modal" data-target="#delete" data-whatever="delete">Xóa</a>
-                        </td>
-                    </tr>
 
                 </tbody>
             </table>
@@ -86,7 +79,7 @@
     <!-- /.container-fluid -->
 </div>
 <!-- /#page-wrapper -->
-    </div>
+    
 <div class="modal fade" id="addnew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
