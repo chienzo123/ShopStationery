@@ -8,7 +8,7 @@ namespace BTL.Models
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=ShopVPPDB")
+            : base("name=Model15")
         {
         }
 

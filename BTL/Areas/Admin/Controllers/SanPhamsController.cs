@@ -50,15 +50,35 @@ namespace BTL.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaSP,MaDanhMuc,TenSP,Gia,MoTa,Anh,Loai")] SanPham sanPham)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.SanPhams.Add(sanPham);
-                db.SaveChanges();
+
+                if (ModelState.IsValid)
+                {
+                    sanPham.Anh = "";
+                    var f = Request.Files["ImageFile"];
+                    if (f != null && f.ContentLength > 0)
+                    {
+                        string FileName = System.IO.Path.GetFileName(f.FileName);
+                        string UploadPath = Server.MapPath("~/Areas/Admin/Alink/" + FileName);
+                        f.SaveAs(UploadPath);
+                        sanPham.Anh = FileName;
+                    }
+                    db.SanPhams.Add(sanPham);
+                    db.SaveChanges();
+
+                }
                 return RedirectToAction("Index");
             }
+            catch (Exception ex)
+            {
+                ViewBag.Error = " Lỗi nhập dữ liệu" + ex.Message;
+                ViewBag.MaDanhMuc = new SelectList(db.DanhMucs, "MaDanhMuc", "TenDanhMuc", sanPham.MaDanhMuc);
+                return View(sanPham);
+            }
+           
 
-            ViewBag.MaDanhMuc = new SelectList(db.DanhMucs, "MaDanhMuc", "TenDanhMuc", sanPham.MaDanhMuc);
-            return View(sanPham);
+            
         }
 
         // GET: Admin/SanPhams/Edit/5

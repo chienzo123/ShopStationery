@@ -6,14 +6,13 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<div id="page-wrapper">
-    <div class="container-fluid">
+
         <div class="row">
             <div class="col-lg-8">
                 <h1 class="page-header">Sản Phẩm</h1>
             </div>
             <div class="col-lg-4" style="padding-top: 60px;">
-                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#addnew" data-whatever="mdo"><i class="fab fa-product-hunt" style="margin-right: 5px;"></i>Thêm mới +</button>
+                <button type="button" class="btn btn-outline-success" ><i class="fab fa-product-hunt" style="margin-right: 5px;"></i><a href="@Url.Action("Create","SanPhams")">+ Thêm mới </a></button>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -70,9 +69,9 @@
                                 @Html.DisplayFor(modelItem => item.Loai)
                             </td>
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.MaSP }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.MaSP }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
+                                @Html.ActionLink("Sửa", "Edit", new { id = item.MaSP }) |
+                                @Html.ActionLink("Chi Tiết", "Details", new { id = item.MaSP }) |
+                                @Html.ActionLink("Xóa", "Delete", new { id = item.MaSP })
                             </td>
                         </tr>
                     }
@@ -81,8 +80,8 @@
                 </tbody>
             </table>
         </div>
-    </div>
+
     <!-- /.container-fluid -->
-</div>
+
 <!-- /#page-wrapper -->
 

@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DanhMucsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamsController.cs" />
     <Compile Include="Areas\Admin\Modal\ChiTietDonHang.cs" />
@@ -510,6 +511,11 @@
     <Content Include="Areas\Admin\Views\SanPhams\Details.cshtml" />
     <Content Include="Areas\Admin\Views\SanPhams\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\SanPhams\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMucs\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
