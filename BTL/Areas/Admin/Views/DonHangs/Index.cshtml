@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BTL.Areas.Admin.Modal.DonHang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Đơn Hàng</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Tên người nhận
+        </th>
+        <th>
+           Số điện thoại người nhận
+        </th>
+        <th>
+            Địa chỉ nhận
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Tình trạng
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNguoiNhan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDTNguoiNhan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChiNhan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TinhTrang)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa tình trạng", "Edit", new { id=item.MaDH }) |
+            @Html.ActionLink("Chi tiết đơn hàng", "Details", new { id=item.MaDH }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaDH })
+        </td>
+    </tr>
+}
+
+</table>

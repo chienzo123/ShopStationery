@@ -2,14 +2,13 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Chi tiết danh mục</h2>
 
 <div>
-    <h4>DanhMuc</h4>
-    <hr />
+
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.TenDanhMuc)
@@ -22,6 +21,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaDanhMuc }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaDanhMuc }) |
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Trở laị trang danh mục", "Index")</button>
 </p>

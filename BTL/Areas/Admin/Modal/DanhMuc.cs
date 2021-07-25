@@ -1,4 +1,4 @@
-﻿namespace BTL.Areas.Admin.Modal
+namespace BTL.Areas.Admin.Modal
 {
     using System;
     using System.Collections.Generic;
@@ -17,11 +17,11 @@
         }
 
         [Key]
-        [DisplayName("Mã Danh Mục")]
+        [DisplayName("M� Danh M?c")]
         public int MaDanhMuc { get; set; }
 
         [StringLength(50)]
-        [DisplayName("Tên Danh mục")]
+        [DisplayName("T�n Danh M?c")]
         public string TenDanhMuc { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

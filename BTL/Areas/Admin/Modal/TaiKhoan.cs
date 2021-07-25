@@ -1,4 +1,4 @@
-﻿namespace BTL.Areas.Admin.Modal
+namespace BTL.Areas.Admin.Modal
 {
     using System;
     using System.Collections.Generic;
@@ -11,23 +11,23 @@
     public partial class TaiKhoan
     {
         [Key]
-        [DisplayName("Mã Tài Khoản")]
         public int MaTK { get; set; }
 
         [Column("TaiKhoan")]
+        [DisplayName("T�i kho?n")]
         [StringLength(100)]
-        [DisplayName("Tài Khoản")]
         public string TaiKhoan1 { get; set; }
 
         [StringLength(100)]
-        [DisplayName("Mật Khẩu")]
+        [DisplayName("M?t kh?u")]
         public string MatKhau { get; set; }
 
         [StringLength(50)]
-        [DisplayName("Tên Nhân Viên")]
+        [DisplayName("T�n nh�n vi�n")]
         public string TenNhanVien { get; set; }
 
-        [DisplayName("Quyền")]
-        public bool? Quyen { get; set; }
+        [StringLength(50)]
+        [DisplayName("Quy?n")]
+        public string Quyen { get; set; }
     }
 }

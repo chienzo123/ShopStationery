@@ -8,7 +8,7 @@ namespace BTL.Areas.Admin.Modal
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=Model14")
+            : base("name=Model17")
         {
         }
 
@@ -23,7 +23,7 @@ namespace BTL.Areas.Admin.Modal
         {
             modelBuilder.Entity<ChiTietDonHang>()
                 .Property(e => e.Gia)
-                .IsFixedLength();
+                .HasPrecision(19, 4);
 
             modelBuilder.Entity<DanhMuc>()
                 .HasMany(e => e.SanPhams)

@@ -1,34 +1,42 @@
 ﻿@model IEnumerable<BTL.Areas.Admin.Modal.DanhMuc>
-
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Caterogy";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TenDanhMuc)
-        </th>
-        <th></th>
-    </tr>
+<div class="row">
+    <div class="col-lg-8">
+        <h1 class="page-header">Danh Mục</h1>
+    </div>
+    <div class="col-lg-4" style="padding-top: 60px;">
+        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#addnew" data-whatever="mdo"><i class="fab fa-product-hunt" style="margin-right: 5px;"></i><a href="@Url.Action("Create","DanhMucs")">+ Thêm mới </a></button>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenDanhMuc)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaDanhMuc }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaDanhMuc }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaDanhMuc })
-        </td>
-    </tr>
-}
+    <table class="table">
+        <tr>
+            <th>
+                Tên danh mục
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenDanhMuc)
+                </td>
+                <td>
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.MaDanhMuc }) |
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.MaDanhMuc }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.MaDanhMuc })
+                </td>
+            </tr>
+        }
+
+    </table>
+
