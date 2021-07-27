@@ -27,8 +27,8 @@ namespace BTL.Models
         [StringLength(50)]
         public string TenSP { get; set; }
 
-        [StringLength(1)]
-        public string Gia { get; set; }
+        [Column(TypeName = "money")]
+        public decimal? Gia { get; set; }
 
         public virtual DonHang DonHang { get; set; }
 

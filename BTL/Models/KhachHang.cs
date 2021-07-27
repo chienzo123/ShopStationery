@@ -24,9 +24,6 @@ namespace BTL.Models
         public int? DienThoai { get; set; }
 
         [StringLength(100)]
-        public string TaiKhoan { get; set; }
-
-        [StringLength(100)]
         public string MatKhau { get; set; }
     }
 }

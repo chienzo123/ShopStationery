@@ -8,7 +8,7 @@ namespace BTL.Models
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=Model15")
+            : base("name=DBShopVPP")
         {
         }
 
@@ -23,7 +23,7 @@ namespace BTL.Models
         {
             modelBuilder.Entity<ChiTietDonHang>()
                 .Property(e => e.Gia)
-                .IsFixedLength();
+                .HasPrecision(19, 4);
 
             modelBuilder.Entity<DanhMuc>()
                 .HasMany(e => e.SanPhams)

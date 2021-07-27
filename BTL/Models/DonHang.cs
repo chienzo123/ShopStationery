@@ -16,7 +16,6 @@ namespace BTL.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MaDH { get; set; }
 
         [StringLength(100)]
@@ -29,6 +28,9 @@ namespace BTL.Models
 
         [StringLength(50)]
         public string Email { get; set; }
+
+        [StringLength(20)]
+        public string TinhTrang { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }

@@ -22,6 +22,9 @@ namespace BTL.Models
         [StringLength(50)]
         public string TenNhanVien { get; set; }
 
-        public bool? Quyen { get; set; }
+        [StringLength(20)]
+        public string Quyen { get; set; }
+
+        public bool? Khoa { get; set; }
     }
 }

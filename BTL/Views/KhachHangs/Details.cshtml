@@ -1,0 +1,33 @@
+﻿@model BTL.Models.KhachHang
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="signup page_customer_account section">
+    <div class="container card p-3">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-lg-3 col-left-ac">
+                <div class="block-account">
+                    <h5 class="title-account">Thông tin tài khoản</h5>
+                    <ul style="list-style: none;">
+                        <li>
+                            <a class="title-info" href="#" style="color: black;">Tên khách hàng : <span>@Session["TenKH"] </span></a>
+                        </li>
+                        <li>
+                            <a class="title-info" href="#" style="color: black;">Số điện thoại : <span>@Session["DienThoai"] </span></a>
+                        </li>
+                        <li>
+                            <a class="title-info" href="#" style="color: black;">Email : <span>@Session["Email"] </span></a>
+                        </li>
+                        <li>
+                            <a class="title-info" href="#" style="color: black;">Địa chỉ : <span>@Session["DiaChi"] </span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+

@@ -142,11 +142,18 @@
     <Compile Include="Areas\Admin\Modal\Model1.cs" />
     <Compile Include="Areas\Admin\Modal\SanPham.cs" />
     <Compile Include="Areas\Admin\Modal\TaiKhoan.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KhachHangsController.cs" />
+    <Compile Include="Controllers\SanPhamsController.cs" />
+    <Compile Include="Dao\ChiTietDatHangDao.cs" />
+    <Compile Include="Dao\DonHangDao.cs" />
+    <Compile Include="Dao\SanPhamDao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietDonHang.cs" />
+    <Compile Include="Models\ChiTietGioHang.cs" />
     <Compile Include="Models\DanhMuc.cs" />
     <Compile Include="Models\DonHang.cs" />
     <Compile Include="Models\KhachHang.cs" />
@@ -314,6 +321,9 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Scripts\GioHang.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="wwwroot\css\bootstrap.min.css" />
     <Content Include="wwwroot\css\elegant-icons.css" />
     <Content Include="wwwroot\css\font-awesome.min.css" />
@@ -583,6 +593,19 @@
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Acccount.cshtml" />
+    <Content Include="Views\KhachHangs\Registers.cshtml" />
+    <Content Include="Views\KhachHangs\Details.cshtml" />
+    <Content Include="Views\KhachHangs\Edit.cshtml" />
+    <Content Include="Views\KhachHangs\Login.cshtml" />
+    <Content Include="Views\SanPhams\Detail.cshtml" />
+    <Content Include="Views\SanPhams\Index.cshtml" />
+    <Content Include="Views\Home\_BestSeller.cshtml" />
+    <Content Include="Views\Home\_Nav.cshtml" />
+    <Content Include="Views\Home\_Categories.cshtml" />
+    <Content Include="Views\GioHang\_DatHang.cshtml" />
+    <Content Include="Views\GioHang\DatHang.cshtml" />
+    <Content Include="Views\GioHang\HoanThanh.cshtml" />
+    <Content Include="Views\GioHang\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

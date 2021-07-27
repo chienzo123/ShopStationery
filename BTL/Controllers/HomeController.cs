@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,21 +9,27 @@ namespace BTL.Controllers
 {
     public class HomeController : Controller
     {
+        private Model1 db = new Model1();
         public ActionResult Index()//Trang chủ
         {
             return View();
         }
 
-        public ActionResult Details()//Chi tiết
+        public PartialViewResult _Nav()
         {
-          
-
-            return View();
+            var danhmucs = db.DanhMucs.Select(d => d);
+            return PartialView(danhmucs);
         }
+        public PartialViewResult _BestSeller()
+        {
+            var spbanchay = db.SanPhams.OrderByDescending(s => s.SoLuong).Take(8);
+            return PartialView(spbanchay);
+        }
+
 
         public ActionResult Contact()//Liên hệ
         {
-           
+
 
             return View();
         }
@@ -38,14 +45,14 @@ namespace BTL.Controllers
         {
             return View();
         }
-        public ActionResult Register()//Đăng Ký
-        {
-            return View();
-        }
-        public ActionResult Login()//Đăng nhập
-        {
-            return View();
-        }
+
+
+        // POST: KhachHangs/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
         public ActionResult Acccount()//Tài Khoản
         {
             return View();

@@ -1,0 +1,38 @@
+﻿@{
+    int tongtien = 0;
+    foreach (var item in Model)
+    {
+        tongtien += (item.SoLuong * (int)item.SP.Gia);
+    }
+}
+
+<div class="col-lg-6 col-md-6">
+    <div class="checkout__order">
+        <h4>Đơn hàng của bạn</h4>
+        <div class="checkout__order__products">Sản Phẩm <span>Thanh Toán</span></div>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>@item.SP.TenSP<span>@((int)item.SP.Gia) VND</span></li>
+            }
+        </ul>
+        <div class="checkout__order__subtotal">Tổng giá <span>@tongtien VND</span></div>
+        <div class="checkout__order__total">Phải trả <span>@tongtien VND</span></div>
+        <div class="checkout__input__checkbox">
+            <label for="acc-or">
+                Thanh toán trực tiếp
+                <input type="checkbox" id="acc-or">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+
+        <div class="checkout__input__checkbox">
+            <label for="paypal">
+                Chuyển khoản
+                <input type="checkbox" id="paypal">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+</div>
