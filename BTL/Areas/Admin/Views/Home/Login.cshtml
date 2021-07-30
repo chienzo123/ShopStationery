@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@model BTL.Areas.Admin.Modal.TaiKhoan
+@{
+    ViewBag.Title = "Login";
+}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -42,23 +46,24 @@
                         <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
-                            <fieldset>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                    </label>
-                                </div>
-                                <!-- Change this to a button or input when using this as a form -->
-                                <a href="@Url.Action("Index","Home")" class="btn btn-lg btn-success btn-block">Login</a>
-                            </fieldset>
-                        </form>
+                        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.TaiKhoan1)
+                                @Html.TextBoxFor(m => m.TaiKhoan1, "", new { @class = "form-control", @placehoder = "Email" })
+
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.MatKhau)
+                                @Html.TextBoxFor(m => m.MatKhau, "", new { @class = "form-control", @placehoder = "Mật Khẩu", @type = "password" })
+
+                            </div>
+                            <div>
+                                <input type="submit" name="submit" class="btn btn-primary" value="Đăng nhập" />
+                            </div>
+                        }
+                        <p>@ViewBag.Error</p>
                     </div>
                 </div>
             </div>

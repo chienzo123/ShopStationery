@@ -1,4 +1,4 @@
-namespace BTL.Areas.Admin.Modal
+﻿namespace BTL.Areas.Admin.Modal
 {
     using System;
     using System.Collections.Generic;
@@ -17,38 +17,40 @@ namespace BTL.Areas.Admin.Modal
         }
 
         [Key]
-        [DisplayName("M� S?n Ph?m")]
+        [DisplayName("Mã sản phẩm")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public int MaSP { get; set; }
-
-        [DisplayName("M� Danh M?c")]
+        [DisplayName("Mã danh mục")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public int MaDanhMuc { get; set; }
 
         [StringLength(50)]
-        [DisplayName("T�n S?n Ph?m")]
-        [Required(ErrorMessage = " T�n s?n ph?m kh�ng ???c b? tr?ng")]
+        [DisplayName("Tên sản phẩm")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public string TenSP { get; set; }
 
         [Column(TypeName = "money")]
-        [DisplayName("Gi� S?n Ph?m")]
-        [Required(ErrorMessage = " Gi� kh�ng ???c b? tr?ng")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
+        [DisplayName("Giá")]
+
         public decimal? Gia { get; set; }
 
         [StringLength(200)]
-        [DisplayName("M� T?")]
+        [DisplayName("Mô tả")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public string MoTa { get; set; }
 
         [StringLength(200)]
-        [DisplayName("?nh")]
-        [Required(ErrorMessage = " ?nh kh�ng ???c b? tr?ng")]
+        [DisplayName("Ảnh")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public string Anh { get; set; }
 
         [StringLength(100)]
-        [DisplayName("Lo?i")]
-        [Required(ErrorMessage = " Lo?i kh�ng ???c b? tr?ng")]
+        [DisplayName("Loại")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public string Loai { get; set; }
-
-        [DisplayName("S? L??ng")]
-        [Required(ErrorMessage = " Lo?i kh�ng ???c b? tr?ng")]
+        [DisplayName("Số Lượng")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public int? SoLuong { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -1,72 +1,75 @@
 ﻿@model BTL.Areas.Admin.Modal.SanPham
 
 @{
+    ViewBag.Title = "Details";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
+<h2>Details</h2>
 
+<div>
+    <h4>SanPham</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DanhMuc.TenDanhMuc)
+        </dt>
 
-<div class="col-lg-12">
-    <h1 class="page-header">
-        Chi tiết sản phẩm
-    </h1>
+        <dd>
+            @Html.DisplayFor(model => model.DanhMuc.TenDanhMuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+    </dl>
 </div>
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.DanhMuc.TenDanhMuc)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.DanhMuc.TenDanhMuc)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.TenSP)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.TenSP)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Gia)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Gia)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.MoTa)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.MoTa)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Anh)
-            </dt>
-    
-            <dd>
-                @{
-                    string ImagePath = "~/Areas/Admin/Alink/Images/" + Model.Anh;
-                }
-                <img src="@Url.Content(ImagePath)" width="100" height="100" class="img-thumbnail" />
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Loai)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Loai)
-            </dd>
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.MaSP }) |
-        <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Trở laị trang sản phẩm", "Index")</button>
-    </p>
-
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaSP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

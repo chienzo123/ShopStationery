@@ -252,16 +252,32 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="@Url.Action("Login","Home")"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
+                        @if (Session["HoTen"] != null)
+                        {
+
+                            <li>
+                                <a href="#"><i class="fa fa-user fa-fw"></i>Xin chào, @Session["HoTen"]</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-gear fa-fw"></i> @Session["ChucVu"]</a>
+                            </li>
+                            <li>@Html.ActionLink("Logout", "Logout", "Home", htmlAttributes: new { @style = "font-size:smail;color:yellow" })</li>
+
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="@Url.Action("Login","Home")"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            </li>
+                        }
+
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
@@ -293,7 +309,15 @@
                             <a href="@Url.Action("Index","SanPhams")"><i class="fab fa-product-hunt"></i> Sản Phẩm</a>
                         </li>
                         <li>
-                            <a href="@Url.Action("Account","Home")"><i class="fas fa-users"></i> Tài Khoản</a>
+                            @if (Session["ChucVu"].ToString() == "Giám đốc")
+                            {
+                                <a href="@Url.Action("Index","TaiKhoans")"><i class="fas fa-users"></i> Tài Khoản</a>
+                            }
+                            else
+                            {
+                                <a href="#"><i class="fas fa-users"></i> Bạn khổng đủ thẩm quyền truy cập vào đây</a>
+                            }
+
                         </li>
                         <li>
                             <a href="@Url.Action("Index","DonHangs")"><i class="fas fa-shopping-basket"></i> Đơn Hàng</a>
@@ -319,24 +343,24 @@
             <!-- /.row -->
             <!-- /#page-wrapper -->
         </div>
-        </div>
-        <!-- /#wrapper -->
-        <!-- jQuery -->
-        <script src="~/Areas/Admin/Alink/Css/jquery/dist/jquery.min.js"></script>
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="~/Areas/Admin/Alink/Css/jquery/dist/jquery.min.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="~/Areas/Admin/Alink/Css/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Areas/Admin/Alink/Css/bootstrap/dist/js/bootstrap.min.js"></script>
 
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="~/Areas/Admin/Alink/Css/metisMenu/dist/metisMenu.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="~/Areas/Admin/Alink/Css/metisMenu/dist/metisMenu.min.js"></script>
 
-        <!-- Morris Charts JavaScript -->
-        <script src="~/Areas/Admin/Alink/Css/raphael/raphael-min.js"></script>
-        <script src="~/Areas/Admin/Alink/Css/morrisjs/morris.min.js"></script>
-        <script src="~/Areas/Admin/Alink/Css/js/morris-data.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="~/Areas/Admin/Alink/Css/raphael/raphael-min.js"></script>
+    <script src="~/Areas/Admin/Alink/Css/morrisjs/morris.min.js"></script>
+    <script src="~/Areas/Admin/Alink/Css/js/morris-data.js"></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script src="~/Areas/Admin/Alink/Css/dist/js/sb-admin-2.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="~/Areas/Admin/Alink/Css/dist/js/sb-admin-2.js"></script>
 
 </body>
 

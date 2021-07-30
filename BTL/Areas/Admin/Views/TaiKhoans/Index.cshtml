@@ -5,10 +5,10 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Tài Khoản</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm mới", "Create")
 </p>
 <table class="table">
     <tr>
@@ -23,6 +23,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Quyen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Khoa)
         </th>
         <th></th>
     </tr>
@@ -42,9 +45,21 @@
             @Html.DisplayFor(modelItem => item.Quyen)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaTK }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaTK }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaTK })
+            @Html.DisplayFor(modelItem => item.Khoa)
+        </td>
+        <td>
+            @if (!(item.Quyen.ToString() == "Giám đốc"))
+            {
+                <a href="@Url.Action("Block","TaiKhoans", new { id = item.MaTK })"><button type="button" class="btn btn-outline-success">Khóa</button></a>
+                <a href="@Url.Action("Delete","TaiKhoans", new { id = item.MaTK })"><button type="button" class="btn btn-outline-success">Xóa</button></a>
+                @*@Html.ActionLink("Khóa", "Block", new { id = item.MaTK })*@
+              
+            }
+            <a href="@Url.Action("Edit","TaiKhoans", new { id = item.MaTK })"><button type="button" class="btn btn-outline-success">Sửa</button></a>
+          
+
+
+
         </td>
     </tr>
 }

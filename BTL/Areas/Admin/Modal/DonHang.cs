@@ -1,4 +1,4 @@
-namespace BTL.Areas.Admin.Modal
+﻿namespace BTL.Areas.Admin.Modal
 {
     using System;
     using System.Collections.Generic;
@@ -17,24 +17,31 @@ namespace BTL.Areas.Admin.Modal
         }
 
         [Key]
+        [DisplayName("Mã đơn hàng")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public int MaDH { get; set; }
 
         [StringLength(100)]
-        [DisplayName("T�n Ng??i Nh?n")]
+        [DisplayName("Tên người nhận")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public string TenNguoiNhan { get; set; }
-        [DisplayName("S? ?i?n tho?i nh?n")]
+        [DisplayName("SDT nhận")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public int? SDTNguoiNhan { get; set; }
 
         [StringLength(100)]
-        [DisplayName("??a ch? nh?n")]
+        [DisplayName("Địa chỉ nhận")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public string DiaChiNhan { get; set; }
 
         [StringLength(50)]
         [DisplayName("Email")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public string Email { get; set; }
 
-        [StringLength(50)]
-        [DisplayName("T�nh tr?ng")]
+        [StringLength(20)]
+        [DisplayName("Tình trạng")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public string TinhTrang { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

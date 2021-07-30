@@ -1,4 +1,4 @@
-namespace BTL.Areas.Admin.Modal
+﻿namespace BTL.Areas.Admin.Modal
 {
     using System;
     using System.Collections.Generic;
@@ -11,23 +11,36 @@ namespace BTL.Areas.Admin.Modal
     public partial class TaiKhoan
     {
         [Key]
+        [DisplayName("Mã tài khoản")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public int MaTK { get; set; }
 
         [Column("TaiKhoan")]
-        [DisplayName("T�i kho?n")]
         [StringLength(100)]
+        [DisplayName("Tài khoản")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public string TaiKhoan1 { get; set; }
 
         [StringLength(100)]
-        [DisplayName("M?t kh?u")]
+        [DisplayName("Mật khẩu")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
+
         public string MatKhau { get; set; }
 
         [StringLength(50)]
-        [DisplayName("T�n nh�n vi�n")]
+        [DisplayName("Tên Nhân viên")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public string TenNhanVien { get; set; }
 
-        [StringLength(50)]
-        [DisplayName("Quy?n")]
+        [StringLength(20)]
+        [DisplayName("Chức vụ")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public string Quyen { get; set; }
+        [DisplayName("Khóa")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
+        public bool? Khoa { get; set; }
+
+        
+        
     }
 }

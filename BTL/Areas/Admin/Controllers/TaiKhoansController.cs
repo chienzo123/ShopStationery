@@ -19,6 +19,10 @@ namespace BTL.Areas.Admin.Controllers
         {
             return View(db.TaiKhoans.ToList());
         }
+        public ActionResult LoiDelete()
+        {
+            return View();
+        }
 
         // GET: Admin/TaiKhoans/Details/5
         public ActionResult Details(int? id)
@@ -46,7 +50,7 @@ namespace BTL.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaTK,TaiKhoan1,MatKhau,TenNhanVien,Quyen")] TaiKhoan taiKhoan)
+        public ActionResult Create([Bind(Include = "MaTK,TaiKhoan1,MatKhau,TenNhanVien,Quyen,Khoa")] TaiKhoan taiKhoan)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +82,7 @@ namespace BTL.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaTK,TaiKhoan1,MatKhau,TenNhanVien,Quyen")] TaiKhoan taiKhoan)
+        public ActionResult Edit([Bind(Include = "MaTK,TaiKhoan1,MatKhau,TenNhanVien,Quyen,Khoa")] TaiKhoan taiKhoan)
         {
             if (ModelState.IsValid)
             {
@@ -101,6 +105,7 @@ namespace BTL.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+            
             return View(taiKhoan);
         }
 
@@ -110,11 +115,46 @@ namespace BTL.Areas.Admin.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             TaiKhoan taiKhoan = db.TaiKhoans.Find(id);
-            db.TaiKhoans.Remove(taiKhoan);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            
+            
+            
+
+                db.TaiKhoans.Remove(taiKhoan);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            
+        }
+        public ActionResult Block(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            TaiKhoan taiKhoan = db.TaiKhoans.Find(id);
+            taiKhoan.Khoa = !taiKhoan.Khoa;
+            if (taiKhoan == null)
+            {
+                return HttpNotFound();
+            }
+           
+            return View(taiKhoan);
         }
 
+        // POST: Admin/TaiKhoans/Delete/5
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Block([Bind(Include = "MaTK,TaiKhoan1,MatKhau,TenNhanVien,Quyen,Khoa")] TaiKhoan taiKhoan)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(taiKhoan).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.Quyen = new SelectList( "Giám đốc", "Nhân Viên");
+            return View(taiKhoan);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -1,87 +1,74 @@
 ﻿@model IEnumerable<BTL.Areas.Admin.Modal.SanPham>
 
-
 @{
-    ViewBag.Title = "Product";
+    ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
+<h2>Index</h2>
 
-        <div class="row">
-            <div class="col-lg-8">
-                <h1 class="page-header">Sản Phẩm</h1>
-            </div>
-            <div class="col-lg-4" style="padding-top: 60px;">
-                <button type="button" class="btn btn-outline-success" ><i class="fab fa-product-hunt" style="margin-right: 5px;"></i><a href="@Url.Action("Create","SanPhams")">+ Thêm mới </a></button>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-        <div class="row">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>
-                            Tên Danh Mục
-                        </th>
-                        <th>
-                           Tên sản phẩm
-                        </th>
-                        <th>
-                            Giá
-                        </th>
-                        <th>
-                            Mô tả
-                        </th>
-                        <th>
-                            Ảnh
-                        </th>
-                        <th>
-                           Loại
-                        </th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DanhMuc.TenDanhMuc)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TenSP)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Gia)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.MoTa)
-                            </td>
-                            <td>
-                                @{
-                                    string ImagePath = "~/Areas/Admin/Alink/Images/" + item.Anh;
-                                }
-                                <img src="@Url.Content(ImagePath)" width="100" height="100" class="img-thumbnail" />
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DanhMuc.TenDanhMuc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Anh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Loai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th></th>
+    </tr>
 
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Loai)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Sửa", "Edit", new { id = item.MaSP }) |
-                                @Html.ActionLink("Chi Tiết", "Details", new { id = item.MaSP }) |
-                                @Html.ActionLink("Xóa", "Delete", new { id = item.MaSP })
-                            </td>
-                        </tr>
-                    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DanhMuc.TenDanhMuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>
+        <td>
+            @{
+                string ImagePath = "~/Areas/Admin/ALink/Images/" + item.Anh;
+            }
+            <img src="@Url.Content(ImagePath)" width="100" class="img-thumbnail" />
+            <br />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Loai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaSP }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaSP }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaSP })
+        </td>
+    </tr>
+}
 
-
-                </tbody>
-            </table>
-        </div>
-
-    <!-- /.container-fluid -->
-
-<!-- /#page-wrapper -->
-
+</table>

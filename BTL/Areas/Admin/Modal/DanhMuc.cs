@@ -1,4 +1,4 @@
-namespace BTL.Areas.Admin.Modal
+﻿namespace BTL.Areas.Admin.Modal
 {
     using System;
     using System.Collections.Generic;
@@ -17,11 +17,13 @@ namespace BTL.Areas.Admin.Modal
         }
 
         [Key]
-        [DisplayName("M� Danh M?c")]
+        [DisplayName("Mã danh mục")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public int MaDanhMuc { get; set; }
 
         [StringLength(50)]
-        [DisplayName("T�n Danh M?c")]
+        [DisplayName("Tên danh mục")]
+        [Required(ErrorMessage = "Không đươc để trống!")]
         public string TenDanhMuc { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
