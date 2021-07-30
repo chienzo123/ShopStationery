@@ -12,16 +12,16 @@ namespace BTL.Controllers
     {
         private Model1 db = new Model1();
         // GET: SanPhams
-        public ActionResult Index(int danhmuc, string chuoitimkiem)
+        public ActionResult Index(int id, string chuoitimkiem)
         {
             var sanphams = db.SanPhams.Select(s => s);
-            if (!String.IsNullOrEmpty(chuoitimkiem) && danhmuc == -2)
+            if (!String.IsNullOrEmpty(chuoitimkiem) && id == -2)
             {
                 sanphams = db.SanPhams.Where(s => s.TenSP.Contains(chuoitimkiem));
             }
-            else if (danhmuc != -1)
+            else if (id != -1)
             {
-                sanphams = db.SanPhams.Where(s => s.MaDanhMuc.Equals(danhmuc)).Select(s => s);
+                sanphams = db.SanPhams.Where(s => s.MaDanhMuc.Equals(id)).Select(s => s);
             }
             return View(sanphams);
         }

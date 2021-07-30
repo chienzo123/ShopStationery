@@ -1,7 +1,5 @@
 ﻿@model BTL.Models.SanPham
-@{
-    ViewBag.Title = "Detail";
-}
+@{ ViewBag.Title = "Detail"; }
 <!-- Detail Section Begin -->
 <section class="product-details spad">
     <div class="container">
@@ -13,13 +11,13 @@
                         <img class="product__details__pic__item--large" src="@Url.Content(ImagePath)" alt="">
                     </div>
                     <div class="product__details__pic__slider owl-carousel">
-                        <img data-imgbigurl="images/butviet.jpg"
+                        <img @*data-imgbigurl="images/butviet.jpg"*@
                              src="@Url.Content(ImagePath)" alt="">
-                        <img data-imgbigurl="images/butlong.jpg"
+                        <img @*data-imgbigurl="images/butlong.jpg"*@
                              src="@Url.Content(ImagePath)" alt="">
-                        <img data-imgbigurl="images/butlongkim.jpg"
+                        <img @*data-imgbigurl="images/butlongkim.jpg"*@
                              src="@Url.Content(ImagePath)" alt="">
-                        <img data-imgbigurl="images/butviet.jpg"
+                        <img @*data-imgbigurl="~/images/butviet.jpg"*@
                              src="@Url.Content(ImagePath)" alt="">
                     </div>
                 </div>
@@ -35,7 +33,7 @@
                         <i class="fa fa-star"></i>
                         <span></span>
                     </div>
-                    <div class="product__details__price">@Html.DisplayFor(model => model.Gia)<span> VNĐ</span></div>
+                    <div class="product__details__price">@Html.DisplayFor(model => model.Gia)</div>
                     <p></p>
                     @*<div class="product__details__quantity">
                             <div class="quantity">
