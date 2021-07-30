@@ -1,11 +1,12 @@
 ﻿@model List<BTL.Models.ChiTietGioHang>
 @{ ViewBag.Title = "Index";
                 Layout = "~/Views/Shared/_Layout.cshtml"; }
-@{ int tongtien = 0;
-                foreach (var item in Model)
-                {
-                    tongtien += (item.SoLuong * (int)item.SP.Gia);
-                } }
+@{ var tongtien = 0;
+    foreach (var item in Model)
+    {
+        tongtien += item.SoLuong*(int)item.SP.Gia;
+    }
+  }
 @section GioHangscripts{
     <script src="~/Scripts/GioHang.js"></script>
 }
@@ -41,7 +42,7 @@
                         <a href="@Url.Action("Detail", "SanPhams", new { id = item.SP.MaSP })"><h5>@item.SP.TenSP</h5></a>
                     </td>
                     <td class="shoping__cart__price">
-                        @((int)item.SP.Gia)
+                        @Html.DisplayFor(modelItem => item.SP.Gia)
                     </td>
                     <td class="shoping__cart__quantity">
                         <div class="quantity">
@@ -52,7 +53,7 @@
                     </td>
 
                     <td class="shoping__cart__total">
-                        @(item.SoLuong*(int)item.SP.Gia) VNĐ
+                        @string.Format("{0:#,##0}", tongtien)
 
                     </td>
                     <td><a href="#" data-id="@item.SP.MaSP" class="Xoa1SP">Xoá</a></td>
@@ -81,9 +82,9 @@
                                             <h5>Tổng tiền</h5>
                                             <ul>
                                                 <li>
-                                                    Tổng giá <span>@tongtien</span>
+                                                    Tổng giá <span>@string.Format("{0:#,##0}", tongtien) VNĐ</span>
                                                 </li>
-                                                <li>Phải trả <span>@tongtien</span></li>
+                                                <li>Phải trả <span>@string.Format("{0:#,##0}", tongtien) VNĐ</span></li>
                                             </ul>
                                             <a href="@Url.Action("DatHang","GioHang",FormMethod.Post)" class="primary-btn">ĐI TỚI ĐẠT HÀNG</a>
                                         </div>

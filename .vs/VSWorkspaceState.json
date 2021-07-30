@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BTL",
+    "\\BTL\\Controllers"
   ],
-  "SelectedNode": "\\BTL.sln",
+  "SelectedNode": "\\BTL\\Controllers\\SanPhamsController.cs",
   "PreviewInSolutionExplorer": false
 }

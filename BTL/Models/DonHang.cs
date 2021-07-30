@@ -1,7 +1,8 @@
-namespace BTL.Models
+﻿namespace BTL.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -19,14 +20,17 @@ namespace BTL.Models
         public int MaDH { get; set; }
 
         [StringLength(100)]
+        [DisplayName("Tên Người Nhân")]
         public string TenNguoiNhan { get; set; }
-
+        [DisplayName("Số Điện Thoại")]
         public int? SDTNguoiNhan { get; set; }
 
         [StringLength(100)]
+        [DisplayName("Địa Chỉ")]
         public string DiaChiNhan { get; set; }
 
         [StringLength(50)]
+        [DisplayName("Email")]
         public string Email { get; set; }
 
         [StringLength(20)]
