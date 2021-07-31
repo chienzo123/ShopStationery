@@ -51,12 +51,12 @@
                             @Html.AntiForgeryToken()
                             <div class="form-group">
                                 @Html.LabelFor(m => m.TaiKhoan1)
-                                @Html.TextBoxFor(m => m.TaiKhoan1, "", new { @class = "form-control", @placehoder = "Email" })
+                                @Html.TextBoxFor(m => m.TaiKhoan1, "", new { @class = "form-control", @placehoder = "Email", @required="" })
 
                             </div>
                             <div class="form-group">
                                 @Html.LabelFor(m => m.MatKhau)
-                                @Html.TextBoxFor(m => m.MatKhau, "", new { @class = "form-control", @placehoder = "Mật Khẩu", @type = "password" })
+                                @Html.TextBoxFor(m => m.MatKhau, "", new { @class = "form-control", @placehoder = "Mật Khẩu", @type = "password", @required =""})
 
                             </div>
                             <div>

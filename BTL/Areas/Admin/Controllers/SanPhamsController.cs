@@ -50,15 +50,31 @@ namespace BTL.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaSP,MaDanhMuc,TenSP,Gia,MoTa,Anh,Loai,SoLuong")] SanPham sanPham)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.SanPhams.Add(sanPham);
-                db.SaveChanges();
+
+                if (ModelState.IsValid)
+                {
+                    sanPham.Anh = "";
+                    var f = Request.Files["ImageFile"];
+                    if (f != null && f.ContentLength > 0)
+                    {
+                        string FileName = System.IO.Path.GetFileName(f.FileName);
+                        string UploadPath = Server.MapPath("~/Areas/Admin/ALink/Images/" + FileName);
+                        f.SaveAs(UploadPath);
+                        sanPham.Anh = FileName;
+                    }
+                    db.SanPhams.Add(sanPham);
+                    db.SaveChanges();
+
+                }
                 return RedirectToAction("Index");
             }
-
-            ViewBag.MaDanhMuc = new SelectList(db.DanhMucs, "MaDanhMuc", "TenDanhMuc", sanPham.MaDanhMuc);
-            return View(sanPham);
+            catch (Exception ex)
+            {
+                ViewBag.Error = " Lỗi nhập dữ liệu" + ex.Message;
+                return View(sanPham);
+            }
         }
 
         // GET: Admin/SanPhams/Edit/5
@@ -84,14 +100,31 @@ namespace BTL.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MaSP,MaDanhMuc,TenSP,Gia,MoTa,Anh,Loai,SoLuong")] SanPham sanPham)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(sanPham).State = EntityState.Modified;
-                db.SaveChanges();
+
+                if (ModelState.IsValid)
+                {
+                    sanPham.Anh = "";
+                    var f = Request.Files["ImageFile"];
+                    if (f != null && f.ContentLength > 0)
+                    {
+                        string FileName = System.IO.Path.GetFileName(f.FileName);
+                        string UploadPath = Server.MapPath("~/Areas/Admin/ALink/Images/" + FileName);
+                        f.SaveAs(UploadPath);
+                        sanPham.Anh = FileName;
+                    }
+                    db.Entry(sanPham).State = EntityState.Modified;
+                    db.SaveChanges();
+
+                }
                 return RedirectToAction("Index");
             }
-            ViewBag.MaDanhMuc = new SelectList(db.DanhMucs, "MaDanhMuc", "TenDanhMuc", sanPham.MaDanhMuc);
-            return View(sanPham);
+            catch (Exception ex)
+            {
+                ViewBag.Error = " Lỗi nhập dữ liệu" + ex.Message;
+                return View(sanPham);
+            }
         }
 
         // GET: Admin/SanPhams/Delete/5
@@ -115,9 +148,17 @@ namespace BTL.Areas.Admin.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             SanPham sanPham = db.SanPhams.Find(id);
-            db.SanPhams.Remove(sanPham);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                db.SanPhams.Remove(sanPham);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = " Không được xóa" + ex.Message;
+                return View("Delete", sanPham);
+            }
         }
 
         protected override void Dispose(bool disposing)

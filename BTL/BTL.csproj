@@ -508,10 +508,6 @@
     <Content Include="Areas\Admin\ALink\Css\metisMenu\README.md" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPhams\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPhams\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPhams\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPhams\Index.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMucs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMucs\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMucs\Details.cshtml" />
@@ -529,6 +525,10 @@
     <Content Include="Areas\Admin\Views\Home\Block.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Login.cshtml" />
     <Content Include="Areas\Admin\Views\SanPhams\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhams\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhams\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhams\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhams\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

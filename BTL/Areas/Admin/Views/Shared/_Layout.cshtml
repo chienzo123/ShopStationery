@@ -261,7 +261,11 @@
                             <li>
                                 <a href="#"><i class="fa fa-gear fa-fw"></i> @Session["ChucVu"]</a>
                             </li>
-                            <li>@Html.ActionLink("Logout", "Logout", "Home", htmlAttributes: new { @style = "font-size:smail;color:yellow" })</li>
+                            <li>
+                                <a href="@Url.Action("Login", "Home")" class="text-danger">
+                                    Đăng xuất
+                                </a>
+                            </li>
 
                         }
                         else

@@ -36,39 +36,40 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DanhMuc.TenDanhMuc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenSP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MoTa)
-        </td>
-        <td>
-            @{
-                string ImagePath = "~/Areas/Admin/ALink/Images/" + item.Anh;
-            }
-            <img src="@Url.Content(ImagePath)" width="100" class="img-thumbnail" />
-            <br />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Loai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SoLuong)
-        </td>
-        <td>
-            @Html.ActionLink("Sửa", "Edit", new { id=item.MaSP }) |
-            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaSP }) |
-            @Html.ActionLink("Xóa", "Delete", new { id=item.MaSP })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DanhMuc.TenDanhMuc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                @{
+                    string ImagePath = "~/Areas/Admin/ALink/Images/" + item.Anh;
+                }
+                <img src="@Url.Content(ImagePath)" width="100" class="img-thumbnail" />
+                <br />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Loai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MaSP }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.MaSP }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.MaSP })
+            </td>
+        </tr>
+    }
 
 </table>
