@@ -3,18 +3,17 @@
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var ImagePath = "~/Areas/Admin/ALink/Images/" + Model.Anh;
 }
 
-<h2>Edit</h2>
+<h2>Sửa sản phẩm</h2>
 
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "SanPhams", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>SanPham</h4>
-        <hr />
+        
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.MaSP)
 
@@ -53,8 +52,10 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Anh, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Anh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Anh, "", new { @class = "text-danger" })
+                <img id="output" class="img-rounded" alt="Ảnh" width="180" height="200" src="@Url.Content(@ImagePath)" />
+                <p><label for="ufile" style="cursor:  pointer;">Chọn  file  ảnh</label></p>
+                <input name="ImageFile" id="ufile" type="file" style="display:  none;" onchange="loadFile(event)" />
+                @Html.EditorFor(model => model.Anh, new { htmlAttributes = new { @class = "form-control", @style = "display: none" } })
             </div>
         </div>
 
@@ -76,16 +77,18 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Lưu" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Trở lại trang sản phẩm", "Index")</button>
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+<script>
+    var loadFile = function (event) {
+        var image = document.getElementById('output'); image.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>

@@ -40,6 +40,8 @@ namespace BTL.Areas.Admin.Controllers
         public ActionResult Create()
         {
             ViewBag.MaDanhMuc = new SelectList(db.DanhMucs, "MaDanhMuc", "TenDanhMuc");
+
+
             return View();
         }
 
@@ -85,6 +87,7 @@ namespace BTL.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             SanPham sanPham = db.SanPhams.Find(id);
+            
             if (sanPham == null)
             {
                 return HttpNotFound();
@@ -105,7 +108,7 @@ namespace BTL.Areas.Admin.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    sanPham.Anh = "";
+                    sanPham.Anh = sanPham.Anh.Trim();
                     var f = Request.Files["ImageFile"];
                     if (f != null && f.ContentLength > 0)
                     {
@@ -122,6 +125,7 @@ namespace BTL.Areas.Admin.Controllers
             }
             catch (Exception ex)
             {
+
                 ViewBag.Error = " Lỗi nhập dữ liệu" + ex.Message;
                 return View(sanPham);
             }

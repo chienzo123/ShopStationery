@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Chi tiết sản phẩm</h2>
 
 <div>
     <h4>SanPham</h4>
@@ -48,7 +48,10 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Anh)
+            @{
+                string ImagePath = "~/Areas/Admin/ALink/Images/" + Model.Anh;
+            }
+            <img src="@Url.Content(ImagePath)" width="300" class="img-thumbnail" />
         </dd>
 
         <dt>
@@ -70,6 +73,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaSP }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaSP }) |
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Trở lại trang sản phẩm", "Index")</button>
 </p>

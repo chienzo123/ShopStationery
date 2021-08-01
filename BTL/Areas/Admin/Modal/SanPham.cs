@@ -43,6 +43,7 @@
         [StringLength(200)]
         [DisplayName("Ảnh")]
         [Required(ErrorMessage = "Không đươc để trống!")]
+        [Column(TypeName ="text")]
         public string Anh { get; set; }
 
         [StringLength(100)]
