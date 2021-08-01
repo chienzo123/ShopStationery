@@ -618,6 +618,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\KhachHangs\Edit.cshtml" />
     <Content Include="Views\Home\_Sec1.cshtml" />
+    <Content Include="Views\KhachHangs\_ChiTietDonHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

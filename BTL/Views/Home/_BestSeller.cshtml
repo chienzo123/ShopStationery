@@ -50,9 +50,7 @@
 
             <img src="@Url.Content(ImagePath)" height="270" />
             <ul class="featured__item__pic__hover">
-                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                <li><a href=@Url.Action("ThemSanPham", "GioHang", new { MaSP = item.MaSP, SoLuong = 1 })><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
         </div>
         <div class="featured__item__text">
@@ -84,7 +82,7 @@
                         {
                     <a href="@Url.Action("Detail", "SanPhams", new { id = item1.MaSP })">
                         <div class="col-lg-3">
-                            <div class="categories__item set-bg" style="width:246.125px">
+                            <div class="categories__item set-bg" style="width:100px;height:270px">
                                 @{ string ImagePath1 = "~/wwwroot/images/" + item1.Anh;}
 
                                 <img src="@Url.Content(ImagePath1)" height="270" />

@@ -18,7 +18,7 @@ namespace BTL.Controllers
             ViewBag.SapTheoGia = sortOrder == "Gia" ? "gia_desc" : "Gia";
 
             var sanphams = db.SanPhams.Select(s => s);
-            if (!String.IsNullOrEmpty(chuoitimkiem) && id == -2)
+            if (!String.IsNullOrEmpty(chuoitimkiem))
             {
                 sanphams = db.SanPhams.Where(s => s.TenSP.Contains(chuoitimkiem));
             }

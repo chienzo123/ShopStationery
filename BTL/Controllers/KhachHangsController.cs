@@ -110,6 +110,11 @@ namespace BTL.Controllers
         {
             if (ModelState.IsValid)
             {
+                Session["TenKH"] = khachHang.TenKH;
+                Session["MaKH"] = khachHang.MaKH;
+                Session["Email"] = khachHang.Email;
+                Session["DienThoai"] = khachHang.DienThoai;
+                Session["Diachi"] = khachHang.DiaChi;
                 db.Entry(khachHang).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("ChiTiet");

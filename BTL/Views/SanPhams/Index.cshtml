@@ -4,19 +4,63 @@
 @{ Html.RenderAction("_Nav", "Home");}
 <!-- Nav Section End -->
 <!-- Product GIrd Section Begin -->
+
 <section class="featured spad">
+
     <div class="container">
+        <div class="sidebar__item" style="float:left;width:16%;">
+            <div class="latest-product__text">
+                <h4>Sản phẩm</h4>
+                <div class="latest-product__slider owl-carousel">
+                    <div class="latest-prdouct__slider__item">
+                        @foreach (var item in Model.Take(3))
+                        {
+            <a href="#" class="latest-product__item">
+                <div>
+                    <div class="latest-product__item__pic" style="text-align:center">
+                        @{ string ImagePath = "~/wwwroot/images/" + item.Anh; }
+                        <img src="@Url.Content(ImagePath)" alt="" width="30" height="30" />
+                    </div>
+                    <div class="latest-product__item__text" style="text-align:left">
+                        <a href="@Url.Action("Detail", "SanPhams", new { id = item.MaSP })" style="color:black"> @Html.DisplayFor(modelItem => item.TenSP)</a>
+                        <span> @Html.DisplayFor(modelItem => item.Gia)</span>
+                    </div>
+                </div>
+
+            </a>}
+                    </div>
+                    <div class="latest-prdouct__slider__item">
+                        @foreach (var item in Model.Take(3))
+                        {
+            <a href="#" class="latest-product__item">
+                <div>
+                    <div class="latest-product__item__pic" style="text-align:center">
+                        @{ string ImagePath = "~/wwwroot/images/" + item.Anh; }
+                        <img src="@Url.Content(ImagePath)" alt="" width="30" height="30" />
+                    </div>
+                    <div class="latest-product__item__text" style="text-align:left">
+                        <a href="@Url.Action("Detail", "SanPhams", new { id = item.MaSP })" style="color:black"> @Html.DisplayFor(modelItem => item.TenSP)</a>
+                        <span> @Html.DisplayFor(modelItem => item.Gia)</span>
+                    </div>
+                </div>
+
+            </a>}
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-4 col-md-5">
                 <div class="filter__sort">
                     <span>Sắp xếp theo</span>
-                    <select>
-                        <option value="0"> @Html.ActionLink("Tên", "Index", new { sortOrder = ViewBag.SapTheoTen })</option>
-                        <option value="0"> @Html.ActionLink("Giá", "Index", new { sortOrder = ViewBag.SapTheoGia })</option>
-                    </select>
+                    &nbsp;&nbsp;&nbsp;
+                    <a href=@Url.Action("Index", new { sortOrder = ViewBag.SapTheoTen }) style="color:black;" }>Tên</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a href=@Url.Action("Index", new { sortOrder = ViewBag.Gia }) style="color:black;">Giá</a>
                 </div>
             </div>
         </div>
+
         <div class="row featured__filter">
             @foreach (var item in Model)
             {
@@ -35,7 +79,7 @@
             <h5>@Html.DisplayFor(modelItem => item.Gia)</h5>
         </div>
     </div>
-</div>            }
+</div>  }
         </div>
     </div>
 </section>
