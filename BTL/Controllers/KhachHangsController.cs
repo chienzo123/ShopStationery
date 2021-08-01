@@ -22,14 +22,14 @@ namespace BTL.Controllers
 
         // GET: KhachHangs/Details/5
         //[HttpGet]
-        public ActionResult Details()
+        public ActionResult Detail()
         {
 
             return View();
         }
 
         // GET: KhachHangs/Create
-        public ActionResult DangKy()
+        public ActionResult Registers()
         {
             return View();
         }
@@ -39,7 +39,7 @@ namespace BTL.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DangKy([Bind(Include = "MaKH,TenKH,DiaChi,Email,DienThoai,TaiKhoan,MatKhau")] KhachHang khachHang)
+        public ActionResult Registers([Bind(Include = "MaKH,TenKH,DiaChi,Email,DienThoai,TaiKhoan,MatKhau")] KhachHang khachHang)
         {
             if (ModelState.IsValid)
             {
@@ -112,7 +112,7 @@ namespace BTL.Controllers
             {
                 db.Entry(khachHang).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("ChiTiet");
+                return RedirectToAction("Detail");
             }
             return View(khachHang);
         }
@@ -126,10 +126,6 @@ namespace BTL.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-        public ActionResult ChiTiet()
-        {
-            return View();
         }
         //public ActionResult DangKy()
         //{

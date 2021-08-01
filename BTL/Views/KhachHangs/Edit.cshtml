@@ -4,10 +4,7 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Sửa thông tin khách hàng</h2>
-
-
+<br />
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -65,7 +62,7 @@
                 Mật khẩu
             </label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control"} })
                 @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -79,5 +76,5 @@
 }
 
 <div>
-    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Trở lại trang sản phẩm", "ChiTiet")</button>
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Trở lại trang sản phẩm", "Detail")</button>
 </div>

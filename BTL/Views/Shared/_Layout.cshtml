@@ -79,7 +79,7 @@
                                 <div class="flex-colum">
                                     @if (Session["TenKH"] != null)
                                     {
-                                        <a href="@Url.Action("Details", "KhachHangs")" class="text-waring"><strong style="color: white;">Tài Khoản</strong></a><br>
+                                        <a href="@Url.Action("Detail", "KhachHangs")" class="text-waring"><strong style="color: white;">Tài Khoản</strong></a><br>
                                         <a href="@Url.Action( "Logout", "KhachHangs")" class="text-waring" style="font-size: 13px; color: white;">Đăng xuất</a> @*<a href="@Url.Action("Details","KhachHangs")">Xin chào:@Session["TenKH"]</a> @Html.ActionLink("Đăng xuất", "Logout", "KhachHangs")*@ }
                                     else
                                     {
