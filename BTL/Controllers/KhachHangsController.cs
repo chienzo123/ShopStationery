@@ -21,7 +21,7 @@ namespace BTL.Controllers
         }
 
         // GET: KhachHangs/Details/5
-        [HttpGet]
+        //[HttpGet]
         public ActionResult Details()
         {
 
@@ -29,7 +29,7 @@ namespace BTL.Controllers
         }
 
         // GET: KhachHangs/Create
-        public ActionResult Registers()
+        public ActionResult DangKy()
         {
             return View();
         }
@@ -39,7 +39,7 @@ namespace BTL.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Registers([Bind(Include = "MaKH,TenKH,DiaChi,Email,DienThoai,TaiKhoan,MatKhau")] KhachHang khachHang)
+        public ActionResult DangKy([Bind(Include = "MaKH,TenKH,DiaChi,Email,DienThoai,TaiKhoan,MatKhau")] KhachHang khachHang)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace BTL.Controllers
                 }
                 else
                 {
-                    ViewBag.Error = "Đăng nhập không thành công";
+                    ViewBag.Error = "Tài khoản hoặc mặt khẩu không chính xác";
                 }
             }
 
@@ -106,13 +106,13 @@ namespace BTL.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaKH,TenKH,DiaChi,Email,DienThoai,TaiKhoan,MatKhau")] KhachHang khachHang)
+        public ActionResult Edit([Bind(Include = "MaKH,TenKH,DiaChi,Email,DienThoai,MatKhau")] KhachHang khachHang)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(khachHang).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ChiTiet");
             }
             return View(khachHang);
         }
@@ -126,6 +126,22 @@ namespace BTL.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult ChiTiet()
+        {
+            return View();
+        }
+        //public ActionResult DangKy()
+        //{
+        //    return View();
+        //}
+        public PartialViewResult _ChiTietDonHang()
+        {
+            string check = (string)Session["Email"];
+            var query = db.DonHangs.Where(x => x.Email.ToString() == check);
+            var list = new List<DonHang>();
+            list = query.ToList();
+            return PartialView(list);
         }
     }
 }

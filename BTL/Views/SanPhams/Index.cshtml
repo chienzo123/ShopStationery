@@ -11,8 +11,8 @@
                 <div class="filter__sort">
                     <span>Sắp xếp theo</span>
                     <select>
-                        <option value="0">Tên</option>
-                        <option value="0">Giá</option>
+                        <option value="0"> @Html.ActionLink("Tên", "Index", new { sortOrder = ViewBag.SapTheoTen })</option>
+                        <option value="0"> @Html.ActionLink("Giá", "Index", new { sortOrder = ViewBag.SapTheoGia })</option>
                     </select>
                 </div>
             </div>

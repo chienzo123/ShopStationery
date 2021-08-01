@@ -1,4 +1,5 @@
 ﻿@model BTL.Models.SanPham
+
 @{ ViewBag.Title = "Detail"; }
 <!-- Detail Section Begin -->
 <section class="product-details spad">
@@ -42,7 +43,7 @@
                                 </div>
                             </div>
                         </div>*@
-                    <a href=@Url.Action("ThemSanPham","GioHang",new { MaSP = Html.DisplayFor(model => model.MaSP), SoLuong = 1 }) class="primary-btn">Chọn mua</a>
+                    <a href=@Url.Action("ThemSanPham", "GioHang", new { MaSP = Html.DisplayFor(model => model.MaSP), SoLuong = 1 }) class="primary-btn">Chọn mua</a>
                     <span class="icon_heart_altt"></span>
 
                     <ul>
@@ -55,6 +56,15 @@
                             else
                             {<span>Hết hàng</span>}
                         <li><b>Mã sản phẩm</b><span>@Html.DisplayFor(model => model.MaSP)</span></li>
+                        <li>
+                            <b>Share on</b>
+                            <div class="share">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -69,8 +79,15 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="tabs-1" role="tabpanel">
                             <div class="product__details__tab__desc">
-                                <h6></h6>
-                                <p> @Html.DisplayFor(model => model.MoTa)</p>
+                                <h6>Đặc tính sản phẩm:</h6>
+                                <p>
+                                    
+                                    - Trọng lượng nhẹ cùng đệm lưng bằng lưới và nhiều lớp mút, giảm thiểu tình trạng đau nhức, giúp bé thoải mái khi mang.<br />
+                                    - Balo không bị co giặt, chống nhăn và chống kéo dãn.<br />
+                                    - Phù hợp cho các bé mầm non<br />
+                                    - Sản phẩm được bảo hành 12 tháng<br />
+                                    - Các thông tin về điều kiện bảo hành có trong tem theo từng balo<br />
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -78,5 +95,6 @@
             </div>
         </div>
     </div>
-</section>
+</section>Ư
+@{ Html.RenderAction("_RelateProduct", "Sanphams", new { madanhmuc = Model.MaDanhMuc, masanphamhientai= Model.MaSP });}
 <!-- Detail Section End -->

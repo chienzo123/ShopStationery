@@ -1,5 +1,32 @@
 ﻿@*Nhung san pham ban chay*@
 @model IEnumerable<BTL.Models.SanPham>
+<section class="categories">
+    <div class="container">
+        <div class="row">
+            <div class="categories__slider owl-carousel">
+                @foreach (var item in Model)
+                {
+                    <a href="@Url.Action("Detail", "SanPhams", new { id = item.MaSP })">
+                        <div class="col-lg-3 pt-5">
+                            <div class="categories__item set-bg">
+                                @{ string ImagePath = "~/wwwroot/images/" + item.Anh;}
+
+                                <img src="@Url.Content(ImagePath)" height="270" />
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <img src="~/wwwroot/images/section_hot_banner.png">
+        </div>
+    </div>
+</div>
 <section class="featured spad">
     <div class="container">
         <div class="row">
@@ -34,10 +61,40 @@
         </div>
     </div>
 
-</div>            }
+</div>      }
 
 
 
         </div>
     </div>
 </section>
+<div class="container py-2 card border-0 mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="heading-bar__title ">
+                <a class="link" href="#" title="VĂN PHÒNG PHẨM - nhoms 10">VĂN PHÒNG PHẨM - nhóm 10</a>
+            </h2>
+            <div class="row mt-3">
+                <div class="col-12 col-md-5">
+                    <img src="~/wwwroot/images/section_pro_banner.jpg">
+                </div>
+                <div class="col-12 col-md-7">
+                    <div class="categories__slider owl-carousel">
+                        @foreach (var item1 in Model.Take(4))
+                        {
+                    <a href="@Url.Action("Detail", "SanPhams", new { id = item1.MaSP })">
+                        <div class="col-lg-3">
+                            <div class="categories__item set-bg" style="width:246.125px">
+                                @{ string ImagePath1 = "~/wwwroot/images/" + item1.Anh;}
+
+                                <img src="@Url.Content(ImagePath1)" height="270" />
+                            </div>
+                        </div>
+                    </a>
+                                    }
+                                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

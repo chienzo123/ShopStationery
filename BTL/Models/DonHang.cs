@@ -20,17 +20,19 @@
         public int MaDH { get; set; }
 
         [StringLength(100)]
-        [DisplayName("Tên Người Nhân")]
+        [Required(ErrorMessage = "Tên không được để trống")]
         public string TenNguoiNhan { get; set; }
-        [DisplayName("Số Điện Thoại")]
+        [Required(ErrorMessage = "Số điện thoại không được để trống")]
         public int? SDTNguoiNhan { get; set; }
 
         [StringLength(100)]
         [DisplayName("Địa Chỉ")]
+        [Required(ErrorMessage = "Địa chỉ không được để trống")]
         public string DiaChiNhan { get; set; }
 
         [StringLength(50)]
         [DisplayName("Email")]
+        [EmailAddress]
         public string Email { get; set; }
 
         [StringLength(20)]

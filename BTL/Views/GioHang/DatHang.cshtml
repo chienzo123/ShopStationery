@@ -35,8 +35,9 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="checkout__input">
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.TenNguoiNhan, htmlAttributes: new { @class = "control-label col-md-2" })
+
                                     <div class="col-md-8">
+                                        Tên Người Nhận
                                         @Html.EditorFor(model => model.TenNguoiNhan, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.TenNguoiNhan, "", new { @class = "text-danger" })
                                     </div>
@@ -44,8 +45,9 @@
                             </div>
                             <div class="checkout__input">
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.SDTNguoiNhan, htmlAttributes: new { @class = "control-label col-md-2" })
+
                                     <div class="col-md-8">
+                                        Số Điện Thoại
                                         @Html.EditorFor(model => model.SDTNguoiNhan, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.SDTNguoiNhan, "", new { @class = "text-danger" })
                                     </div>
@@ -53,8 +55,8 @@
                             </div>
                             <div class="checkout__input">
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.DiaChiNhan, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-8">
+                                        Địa Chỉ
                                         @Html.EditorFor(model => model.DiaChiNhan, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.DiaChiNhan, "", new { @class = "text-danger" })
                                     </div>
@@ -63,8 +65,9 @@
                             </div>
                             <div class="checkout__input">
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+
                                     <div class="col-md-8">
+                                        Email
                                         @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                     </div>

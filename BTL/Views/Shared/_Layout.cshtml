@@ -34,7 +34,6 @@
 
 <body>
     <!-- Page Preloder -->
-
     <div class="header">
         <div class="mid-header d-flex wid_100 justify-content-center">
             <div class="container">
@@ -47,10 +46,19 @@
                     <div class="col-md-5 pt-2">
                         @using (Html.BeginForm("Index", "SanPhams"))
                         {
-            <form class="input-group search-bar custom-input-group " role="search">
-                <input type="text" name="chuoitimkiem" value="" autocomplete="off" placeholder="Tìm kiếm sản phẩm..." class="input-group-field auto-search form-control " required="">
-                <input type="hidden" name="danhmuc" value="-2">
-            </form>}
+                            <form class="input-group search-bar custom-input-group " role="search">
+                                <div class="d-flex">
+                                    <input type="text" name="chuoitimkiem" value="" autocomplete="off" placeholder="Tìm kiếm sản phẩm..." class="input-group-field auto-search form-control " required="">
+                                    <input type="hidden" name="danhmuc" value="-2">
+                                    <span class="input-group-btn btn-action">
+                                        <button type="submit" class="btn text-white icon-fallback-text h-100">
+                                            <span class="fa fa-search" aria-hidden="true"></span>
+                                        </button>
+                                    </span>
+                                </div>
+
+                            </form>
+                        }
                     </div>
                     <div class="col-md-5" style="padding-left: 50px;">
                         <ul class="d-flex mb-0">
@@ -71,11 +79,11 @@
                                 <div class="flex-colum">
                                     @if (Session["TenKH"] != null)
                                     {
-                        <a href="@Url.Action("Details", "KhachHangs")" class="text-waring"><strong style="color: white;">Tài Khoản</strong></a><br>
+                                        <a href="@Url.Action("Details", "KhachHangs")" class="text-waring"><strong style="color: white;">Tài Khoản</strong></a><br>
                                         <a href="@Url.Action( "Logout", "KhachHangs")" class="text-waring" style="font-size: 13px; color: white;">Đăng xuất</a> @*<a href="@Url.Action("Details","KhachHangs")">Xin chào:@Session["TenKH"]</a> @Html.ActionLink("Đăng xuất", "Logout", "KhachHangs")*@ }
                                     else
                                     {
-                        <a href="@Url.Action("Registers", "KhachHangs")" class="text-waring"><strong style="color: white;">Đăng ký</strong></a><br>
+                                        <a href="@Url.Action("Registers", "KhachHangs")" class="text-waring"><strong style="color: white;">Đăng ký</strong></a><br>
                                         <a href="@Url.Action("Login", "KhachHangs")" class="text-waring" style="font-size: 13px; color: white;">Đăng Nhập</a>}
                                 </div>
                             </li>

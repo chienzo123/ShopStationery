@@ -1,0 +1,82 @@
+﻿@model BTL.Models.KhachHang
+
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("DangKy", "KhachHangs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <section class="section">
+        <div class="container margin-bottom-20 card py-2">
+            <div class="wrap_background_aside margin-bottom-40 page_login">
+                <div class="heading-bar">
+                    <h1 class="title_page mb-0">Đăng ký tài khoản</h1>
+                    <span class="or">
+                        Bạn đã có tài khoản? Đăng nhập
+                        <a href="@Url.Action("Login","KhachHangs")" style="text-decoration: underline;" class="btn-link-style  btn-style margin-right-0">tại đây</a>
+                    </span>
+
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 offset-md-3 ">
+                        <div class="page-login py-3 ">
+                            <div id="login">
+                                <h2 class="text-center">
+                                    Thông tin cá nhân
+                                </h2>
+                                <form accept-charset="UTF-8" action="/account" id="create_customer" method="post">
+                                    <input name="form_type" type="hidden" value="create_customer">
+                                    <input name="utf8" type="hidden" value="✓">
+
+                                    <div class="form-signup " style="color:red;">
+
+                                    </div>
+                                    <div class="form-signup clearfix">
+                                        <div class="row">
+                                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                                @Html.LabelFor(model => model.TenKH, "Họ và tên")
+                                                @Html.EditorFor(model => model.TenKH, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.TenKH, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                                @Html.LabelFor(model => model.DiaChi, "Địa Chỉ")
+                                                @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                                @Html.LabelFor(model => model.DienThoai, "Điện thoại")
+                                                @Html.EditorFor(model => model.DienThoai, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.DienThoai, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                                @Html.LabelFor(model => model.Email, "Email")
+                                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                                @Html.LabelFor(model => model.MatKhau, "Mật khẩu")
+                                                @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="section margin-top-10 button_bottom mt-3">
+                                            <button type="submit" value="Đăng ký" class="btn  btn-style  btn_register btn-block">Đăng ký</button>
+
+                                        </div>
+                                    </div>
+
+                                    <input id="4fc7984eb01a4039b8fd1e6fd5a05c82" name="g-recaptcha-response" type="hidden" value="03AGdBq27-OMvtk5XL7LZ4sD0pl1CsvUpoC05ku1moAtul6x4iy3yeqdTrw2igvMBzzIOo0e_lr8cdHa9Q_R9qXKszazCBYlEjERTFAVn1GDjCRkirpzNfNCptshg6o0eTvtO26X1c8v67LwPy7RP8FJ8eKVBY5mLK5zrp8bMtlY-DY1uBhhF7J6u1lM7fgWyxGkmzsJm9ubUVlOwLA7z23zeDwrHhzypCeFnof2n8YNqg0zBL7UYHwGEcfrt5TfVx_nAO2SwS_tBtrPYRt1bNycMDtGeaGfYHFSV4WZdEMdwLjkNVa2FrLScDXwbuhr7BGYpUGfMcZABJjpuJ4BuXeGGAnZ_PcjwQ6JTrTHp9IdyY7PG5GF-kUCt9TPkE9vFcaq-seMsGurhIMLt1MEQA6MkkOiMqQ-jC-25_psO4kd2nriKuySBLHToi4J0SymDgkmQoUA2Uo4P45ilEpURfleiykEdtELUx0N2twKMUjAtPiv7C41AJI_WzfpAr8ezKRC2L_-D5fhZI">
+                                    <script src="https://www.google.com/recaptcha/api.js?render=6LdD18MUAAAAAHqKl3Avv8W-tREL6LangePxQLM-"></script>
+                                    <script>grecaptcha.ready(function () { grecaptcha.execute('6LdD18MUAAAAAHqKl3Avv8W-tREL6LangePxQLM-', { action: 'submit' }).then(function (token) { document.getElementById('4fc7984eb01a4039b8fd1e6fd5a05c82').value = token; }); });</script>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>}

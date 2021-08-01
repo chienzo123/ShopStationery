@@ -1,0 +1,23 @@
+﻿@model IEnumerable<BTL.Models.SanPham>
+
+    <!-- Nav Section Begin -->
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+                <div class="categories__slider owl-carousel">
+                    @foreach (var item in Model)
+                    {
+                        <a href="@Url.Action("Detail", "SanPhams", new { id = item.MaSP })">
+                            <div class="col-lg-3 pt-5">
+                                <div class="categories__item set-bg">
+                                    @{ string ImagePath = "~/wwwroot/images/" + item.Anh;}
+
+                                    <img src="@Url.Content(ImagePath)" height="270" />
+                                </div>
+                            </div>
+                        </a>
+                        }
+                    </div>
+            </div>
+        </div>
+    </section>

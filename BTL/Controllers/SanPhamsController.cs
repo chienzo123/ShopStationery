@@ -12,8 +12,11 @@ namespace BTL.Controllers
     {
         private Model1 db = new Model1();
         // GET: SanPhams
-        public ActionResult Index(int id, string chuoitimkiem)
+        public ActionResult Index(int id, string chuoitimkiem, string sortOrder)
         {
+            ViewBag.SapTheoTen = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.SapTheoGia = sortOrder == "Gia" ? "gia_desc" : "Gia";
+
             var sanphams = db.SanPhams.Select(s => s);
             if (!String.IsNullOrEmpty(chuoitimkiem) && id == -2)
             {
@@ -22,6 +25,21 @@ namespace BTL.Controllers
             else if (id != -1)
             {
                 sanphams = db.SanPhams.Where(s => s.MaDanhMuc.Equals(id)).Select(s => s);
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    sanphams = sanphams.OrderByDescending(s => s.TenSP);
+                    break;
+                case "Gia":
+                    sanphams = sanphams.OrderBy(s => s.Gia);
+                    break;
+                case "gia_desc":
+                    sanphams = sanphams.OrderByDescending(s => s.Gia);
+                    break;
+                default:
+                    sanphams = sanphams.OrderBy(s => s.TenSP);
+                    break;
             }
             return View(sanphams);
         }
@@ -42,6 +60,11 @@ namespace BTL.Controllers
             return View(sanpham);
             //}
 
+        }
+        public PartialViewResult _RelateProduct(int madanhmuc, int masanphamhientai)
+        {
+            var splienquan = db.SanPhams.Where(s => s.MaDanhMuc.Equals(madanhmuc) && !s.MaSP.Equals(masanphamhientai)).Take(4);
+            return PartialView(splienquan);
         }
     }
 }

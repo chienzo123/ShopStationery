@@ -1,0 +1,85 @@
+﻿@model BTL.Models.KhachHang
+
+@{
+    ViewBag.Title = "ChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="signup page_customer_account section">
+    <div class="container card p-3">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-lg-3 col-left-ac">
+                <div class="block-account">
+                    <h5 class="title-account">Trang tài khoản</h5>
+                    <p>
+                        Xin chào, <span style="color:#ec1c24;">@Session["TenKH"]</span>&nbsp;!
+                    </p>
+                    <a href="@Url.Action( "Logout", "KhachHangs")" class="text-waring" style="font-size: 13px; color: black;">Đăng xuất</a>
+                    <br/>
+                    <a href="@Url.Action( "Edit", "KhachHangs",new {id =Session["MaKH"] })" class="text-waring" style="font-size: 13px; color: black;">Chỉnh sửa thông tin</a>
+
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-9 col-right-ac">
+                <div id="b" class=" col-right-account border-0 margin-top-20">
+                    <div class="block-account">
+                        <div class="block-title-account"><h1>Tài khoản</h1></div>
+                        <div class="block-content form-signup">
+                            <p>Tên tài khoản: <strong style="line-height: 20px;"> @Session["Email"]</strong></p>
+                            <p>
+                                <i class="fa fa-home font-some" aria-hidden="true"></i>  <span>
+                                    Địa chỉ: @Session["DiaChi"]
+                                </span>
+                            </p>
+                            <p><i class="fa fa-mobile font-some" aria-hidden="true"></i> <span>Điện thoại: @Session["DienThoai"]</span> </p>
+
+
+                        </div>
+                    </div>
+                </div>
+                @*<h5 class="title-head margin-top-0">Đơn hàng của bạn</h5>
+                <div class="col-xs-12 col-sm-12 col-lg-12 no-padding">
+
+                    <div class="my-account">
+                        <div class="dashboard">
+
+                            <div class="recent-orders">
+                                <div class="table-responsive-block tab-all" style="overflow-x:auto;">
+                                    <table class="table table-cart table-order" id="my-orders-table">
+                                        <thead class="thead-default">
+                                            <tr>
+                                                <th>Mã đơn hàng</th>
+                                                <th>Ngày đặt</th>
+                                                <th>Thành tiền</th>
+                                                <th>TT thanh toán</th>
+                                                <th>TT vận chuyển</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+
+                                            <tr>
+                                                <td colspan="6">
+                                                    
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+
+
+                                    </table>
+
+                                </div>
+
+                                <div class="paginate-pages pull-right page-account text-right col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>*@
+            </div>
+        </div>
+    </div>
+</section>
