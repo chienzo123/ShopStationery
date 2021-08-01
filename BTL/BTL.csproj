@@ -608,8 +608,8 @@
     <Content Include="Views\Home\_BestSeller.cshtml" />
     <Content Include="Views\Home\_Categories.cshtml" />
     <Content Include="Views\Home\_Nav.cshtml" />
-    <Content Include="Views\KhachHangs\ChiTiet.cshtml" />
-    <Content Include="Views\KhachHangs\DangKy.cshtml" />
+    <Content Include="Views\KhachHangs\Detail.cshtml" />
+    <Content Include="Views\KhachHangs\Registers.cshtml" />
     <Content Include="Views\KhachHangs\Login.cshtml" />
     <Content Include="Views\SanPhams\Detail.cshtml" />
     <Content Include="Views\SanPhams\Index.cshtml" />

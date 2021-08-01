@@ -4,7 +4,7 @@
     ViewBag.Title = "DangKy";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("DangKy", "KhachHangs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Registers", "KhachHangs", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <section class="section">
