@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace BTL.Controllers
 {
@@ -12,14 +13,16 @@ namespace BTL.Controllers
     {
         private Model1 db = new Model1();
         // GET: SanPhams
-        public ActionResult Index(int id, string chuoitimkiem, string sortOrder)
+        public ActionResult Index(int id, string chuoitimkiem, string sortOrder,int? page)
         {
+            ViewBag.CurrentSort = sortOrder;
             ViewBag.SapTheoTen = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.SapTheoGia = sortOrder == "Gia" ? "gia_desc" : "Gia";
 
             var sanphams = db.SanPhams.Select(s => s);
             if (!String.IsNullOrEmpty(chuoitimkiem))
             {
+                page = 1;
                 sanphams = db.SanPhams.Where(s => s.TenSP.Contains(chuoitimkiem));
             }
             else if (id != -1)
@@ -41,7 +44,9 @@ namespace BTL.Controllers
                     sanphams = sanphams.OrderBy(s => s.TenSP);
                     break;
             }
-            return View(sanphams);
+            int pageNumber = (page ?? 1);
+            int pageSize = 16;
+            return View(sanphams.ToPagedList(pageNumber,pageSize));
         }
 
         public ActionResult Detail(int id)
@@ -66,5 +71,11 @@ namespace BTL.Controllers
             var splienquan = db.SanPhams.Where(s => s.MaDanhMuc.Equals(madanhmuc) && !s.MaSP.Equals(masanphamhientai)).Take(4);
             return PartialView(splienquan);
         }
+        public PartialViewResult _SideBar(int danhmuchientai)
+        {
+            var sidebar = db.SanPhams.Where(s => !s.MaDanhMuc.Equals(danhmuchientai)).Take(6).OrderBy(s=> s.MaSP);
+            return PartialView(sidebar);
+        }
+
     }
 }

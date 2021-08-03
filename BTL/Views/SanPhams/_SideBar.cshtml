@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BTL.Models.SanPham>
+        
+<div class="latest-product__slider owl-carousel">
+    <div class="latest-prdouct__slider__item">
+        @foreach (var item in Model.Take(3))
+        {
+            <a href="@Url.Action("Detail", "SanPhams", new { id = item.MaSP })" class="latest-product__item">
+                <div>
+                    <div class="latest-product__item__pic" style="text-align:center">
+                        @{ string ImagePath = "~/wwwroot/images/" + item.Anh; }
+                        <img src="@Url.Content(ImagePath)" alt="" width="30" height="30" />
+                    </div>
+                    <div class="latest-product__item__text" style="text-align:left">
+                        <a style="color:black"> @Html.DisplayFor(modelItem => item.TenSP)</a>
+                        <span> @Html.DisplayFor(modelItem => item.Gia)</span>
+                    </div>
+                </div>
+
+            </a>}
+    </div>
+    <div class="latest-prdouct__slider__item">
+        @foreach (var item in Model.OrderByDescending(s=>s.MaSP).Take(3))
+        {
+            <a href="@Url.Action("Detail", "SanPhams", new { id = item.MaSP })" class="latest-product__item">
+                <div>
+                    <div class="latest-product__item__pic" style="text-align:center">
+                        @{ string ImagePath = "~/wwwroot/images/" + item.Anh; }
+                        <img src="@Url.Content(ImagePath)" alt="" width="30" height="30" />
+                    </div>
+                    <div class="latest-product__item__text" style="text-align:left">
+                        <a  style="color:black"> @Html.DisplayFor(modelItem => item.TenSP)</a>
+                        <span> @Html.DisplayFor(modelItem => item.Gia)</span>
+                    </div>
+                </div>
+
+            </a>}
+    </div>
+</div>

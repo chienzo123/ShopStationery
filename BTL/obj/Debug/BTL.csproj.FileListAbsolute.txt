@@ -496,3 +496,7 @@ C:\Users\Admin\Desktop\ShopStationery\BTL\obj\Debug\BTL.csproj.CoreCompileInputs
 C:\Users\Admin\Desktop\ShopStationery\BTL\obj\Debug\BTL.csproj.CopyComplete
 C:\Users\Admin\Desktop\ShopStationery\BTL\obj\Debug\BTL.dll
 C:\Users\Admin\Desktop\ShopStationery\BTL\obj\Debug\BTL.pdb
+C:\Users\Admin\Desktop\ShopStationery\BTL\bin\PagedList.dll
+C:\Users\Admin\Desktop\ShopStationery\BTL\bin\PagedList.Mvc.dll
+C:\Users\Admin\Desktop\ShopStationery\BTL\bin\PagedList.xml
+C:\Users\Admin\Desktop\ShopStationery\BTL\bin\PagedList.Mvc.xml

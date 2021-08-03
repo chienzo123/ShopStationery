@@ -1,4 +1,6 @@
-﻿@model IEnumerable<BTL.Models.SanPham>
+﻿@model PagedList.IPagedList<BTL.Models.SanPham>
+@using PagedList.Mvc;
+
 @{ ViewBag.Title = "Index"; }
 <!-- Nav Section Begin -->
 @{ Html.RenderAction("_Nav", "Home");}
@@ -11,42 +13,7 @@
         <div class="sidebar__item" style="float:left;width:16%;">
             <div class="latest-product__text">
                 <h4>Sản phẩm</h4>
-                <div class="latest-product__slider owl-carousel">
-                    <div class="latest-prdouct__slider__item">
-                        @foreach (var item in Model.Take(3))
-                        {
-            <a href="#" class="latest-product__item">
-                <div>
-                    <div class="latest-product__item__pic" style="text-align:center">
-                        @{ string ImagePath = "~/wwwroot/images/" + item.Anh; }
-                        <img src="@Url.Content(ImagePath)" alt="" width="30" height="30" />
-                    </div>
-                    <div class="latest-product__item__text" style="text-align:left">
-                        <a href="@Url.Action("Detail", "SanPhams", new { id = item.MaSP })" style="color:black"> @Html.DisplayFor(modelItem => item.TenSP)</a>
-                        <span> @Html.DisplayFor(modelItem => item.Gia)</span>
-                    </div>
-                </div>
-
-            </a>}
-                    </div>
-                    <div class="latest-prdouct__slider__item">
-                        @foreach (var item in Model.Take(3))
-                        {
-            <a href="#" class="latest-product__item">
-                <div>
-                    <div class="latest-product__item__pic" style="text-align:center">
-                        @{ string ImagePath = "~/wwwroot/images/" + item.Anh; }
-                        <img src="@Url.Content(ImagePath)" alt="" width="30" height="30" />
-                    </div>
-                    <div class="latest-product__item__text" style="text-align:left">
-                        <a href="@Url.Action("Detail", "SanPhams", new { id = item.MaSP })" style="color:black"> @Html.DisplayFor(modelItem => item.TenSP)</a>
-                        <span> @Html.DisplayFor(modelItem => item.Gia)</span>
-                    </div>
-                </div>
-
-            </a>}
-                    </div>
-                </div>
+                @{ Html.RenderAction("_SideBar", "SanPhams", new { danhmuchientai = Model.First().MaDanhMuc }); }
             </div>
         </div>
         <div class="row">
@@ -64,22 +31,29 @@
         <div class="row featured__filter">
             @foreach (var item in Model)
             {
-<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
-    <div class="featured__item">
-        <div class="featured__item__pic set-bg">
-            @{ string ImagePath = "~/wwwroot/images/" + item.Anh;}
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" style="height:220px">
+                            @{ string ImagePath = "~/wwwroot/images/" + item.Anh;}
 
-            <img src="@Url.Content(ImagePath)" height="270" />
-            <ul class="featured__item__pic__hover">
-                <li><a href=@Url.Action("ThemSanPham","GioHang",new { MaSP = item.MaSP , SoLuong = 1 })><i class="fa fa-shopping-cart"></i></a></li>
-            </ul>
-        </div>
-        <div class="featured__item__text">
-            <h6><a href="@Url.Action("Detail", "SanPhams", new { id = item.MaSP })">@Html.DisplayFor(modelItem => item.TenSP)</a></h6>
-            <h5>@Html.DisplayFor(modelItem => item.Gia)</h5>
-        </div>
-    </div>
-</div>  }
+                            <img src="@Url.Content(ImagePath)" />
+                            <ul class="featured__item__pic__hover">
+                                <li><a href=@Url.Action("ThemSanPham","GioHang",new { MaSP = item.MaSP , SoLuong = 1 })><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="@Url.Action("Detail", "SanPhams", new { id = item.MaSP })">@Html.DisplayFor(modelItem => item.TenSP)</a></h6>
+                            <h5>@Html.DisplayFor(modelItem => item.Gia)</h5>
+                        </div>
+                    </div>
+                </div>
+            }
+            
+            <div style="clear:both">
+                Trang @(Model.PageCount< Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+            </div>
+
         </div>
     </div>
 </section>
