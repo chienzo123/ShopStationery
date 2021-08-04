@@ -391,6 +391,7 @@
     <Content Include="wwwroot\Images\phone-call.jpg" />
     <Content Include="wwwroot\Images\section_hot_banner.png" />
     <Content Include="wwwroot\Images\section_pro_banner.jpg" />
+    <Content Include="wwwroot\Images\test.jpg" />
     <Content Include="wwwroot\Images\tl-075_ae78f89101f44c268f5776f09bc60f55.jpg" />
     <Content Include="wwwroot\Images\untitled-1_0b2d4ddbbca749779ca73e8b48bfc03e.jpg" />
     <Content Include="wwwroot\js\bootstrap.min.js" />

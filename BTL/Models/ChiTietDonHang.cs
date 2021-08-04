@@ -28,6 +28,7 @@ namespace BTL.Models
         public string TenSP { get; set; }
 
         [Column(TypeName = "money")]
+        [DisplayFormat(DataFormatString = "{0:C0}")]
         public decimal? Gia { get; set; }
 
         public virtual DonHang DonHang { get; set; }

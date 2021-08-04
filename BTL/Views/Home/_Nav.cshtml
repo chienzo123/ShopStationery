@@ -14,17 +14,16 @@
                         <li class="cha1">
                             <a href="@Url.Action("Index","SanPhams", new { id= -1})">
                                 <i class="fa fa-pencil mr-2"></i>Tất cả sản phẩm
-                            </a>
-                            <i class="fas fa-chevron-right float-right" data-toggle-submenu="" style="margin-top: -27px; margin-right: 20px;"></i>
+                            </a>                  
                         </li>
                         @foreach (var item in Model)
                         {
-            <li class="cha1">
-                <a href="@Url.Action("Index","SanPhams", new { id= item.MaDanhMuc})">
-                    <i class="fa fa-pencil mr-2"></i>@Html.DisplayFor(modelItem => item.TenDanhMuc)
-                </a>
-                <i class="fas fa-chevron-right float-right" data-toggle-submenu="" style="margin-top: -27px; margin-right: 20px;"></i>
-            </li>}
+                            <li class="cha1">
+                                <a href="@Url.Action("Index","SanPhams", new { id= item.MaDanhMuc})">
+                                    <i class="fa fa-pencil mr-2"></i>@Html.DisplayFor(modelItem => item.TenDanhMuc)
+                                </a>
+                            </li>
+                        }
 
 
                     </ul>

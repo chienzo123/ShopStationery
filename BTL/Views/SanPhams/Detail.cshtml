@@ -37,13 +37,16 @@
                     <div class="product__details__price">@Html.DisplayFor(model => model.Gia)</div>
                     <p></p>
                     @*<div class="product__details__quantity">
-                            <div class="quantity">
-                                <div class="pro-qty">
-                                    <input type="text" value="1" name="txtsoluong">
-                                </div>
-                            </div>
-                        </div>*@
-                    <a href=@Url.Action("ThemSanPham", "GioHang", new { MaSP = Html.DisplayFor(model => model.MaSP), SoLuong = 1 }) class="primary-btn">Chọn mua</a>
+            <div class="quantity">
+                <div class="pro-qty">
+                    <input type="text" value="1" name="txtsoluong">
+                </div>
+            </div>
+        </div>*@
+
+                    <a href=@Url.Action("ThemSanPham", "GioHang", new { MaSP = Html.DisplayFor(model => model.MaSP), SoLuong = 1 }) class="primary-btn">Thêm vào giỏ</a>
+                   
+   
                     <span class="icon_heart_altt"></span>
 
                     <ul>
@@ -81,7 +84,7 @@
                             <div class="product__details__tab__desc">
                                 <h6>Đặc tính sản phẩm:</h6>
                                 <p>
-                                    
+
                                     - Trọng lượng nhẹ cùng đệm lưng bằng lưới và nhiều lớp mút, giảm thiểu tình trạng đau nhức, giúp bé thoải mái khi mang.<br />
                                     - Balo không bị co giặt, chống nhăn và chống kéo dãn.<br />
                                     - Phù hợp cho các bé mầm non<br />
@@ -96,5 +99,5 @@
         </div>
     </div>
 </section>
-@{ Html.RenderAction("_RelateProduct", "Sanphams", new { madanhmuc = Model.MaDanhMuc, masanphamhientai= Model.MaSP });}
+@{ Html.RenderAction("_RelateProduct", "Sanphams", new { madanhmuc = Model.MaDanhMuc, masanphamhientai = Model.MaSP });}
 <!-- Detail Section End -->

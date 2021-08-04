@@ -69,7 +69,7 @@ namespace BTL.Controllers
                 list.Add(sanpham);
                 Session[GioHangSession] = list;
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("");
         }
         public ActionResult CapNhap(string GioHangdata)
         {
@@ -157,6 +157,6 @@ namespace BTL.Controllers
             Session[GioHangSession] = sessionGioHang;
             return View();
         }
-
+       
     }
 }

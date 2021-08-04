@@ -1,23 +1,29 @@
-﻿@{
-    int tongtien = 0;
+﻿@{ var tongtien = 0;
     foreach (var item in Model)
     {
-        tongtien += (item.SoLuong * (int)item.SP.Gia);
+        tongtien += item.SoLuong * (int)item.SP.Gia;
     }
 }
 
 <div class="col-lg-6 col-md-6">
     <div class="checkout__order">
         <h4>Đơn hàng của bạn</h4>
-        <div class="checkout__order__products">Sản Phẩm <span>Thanh Toán</span></div>
+        <div class="checkout__order__products">
+            Sản Phẩm
+            <span>Thanh Toán</span>
+        </div>
         <ul>
             @foreach (var item in Model)
             {
-                <li>@item.SP.TenSP<span>@((int)item.SP.Gia) VND</span></li>
+                <li>
+                    @item.SP.TenSP x @item.SoLuong
+                    <span> @string.Format("{0:#,##0}",(int)item.SP.Gia)</span>
+
+                </li>
             }
         </ul>
-        <div class="checkout__order__subtotal">Tổng giá <span>@tongtien VND</span></div>
-        <div class="checkout__order__total">Phải trả <span>@tongtien VND</span></div>
+        <div class="checkout__order__subtotal">Tổng giá <span>@string.Format("{0:#,##0}", tongtien) VND</span></div>
+        <div class="checkout__order__total">Phải trả <span>@string.Format("{0:#,##0}", tongtien) VND</span></div>
         <div class="checkout__input__checkbox">
             <label for="acc-or">
                 Thanh toán trực tiếp
@@ -28,11 +34,11 @@
 
 
         @*<div class="checkout__input__checkbox">
-            <label for="paypal">
-                Chuyển khoản
-                <input type="checkbox" id="paypal">
-                <span class="checkmark"></span>
-            </label>
-        </div>*@
+                <label for="paypal">
+                    Chuyển khoản
+                    <input type="checkbox" id="paypal">
+                    <span class="checkmark"></span>
+                </label>
+            </div>*@
     </div>
 </div>

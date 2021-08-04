@@ -500,3 +500,7 @@ C:\Users\Admin\Desktop\ShopStationery\BTL\bin\PagedList.dll
 C:\Users\Admin\Desktop\ShopStationery\BTL\bin\PagedList.Mvc.dll
 C:\Users\Admin\Desktop\ShopStationery\BTL\bin\PagedList.xml
 C:\Users\Admin\Desktop\ShopStationery\BTL\bin\PagedList.Mvc.xml
+C:\Users\newbi\source\repos\ShopStationery\BTL\bin\PagedList.dll
+C:\Users\newbi\source\repos\ShopStationery\BTL\bin\PagedList.Mvc.dll
+C:\Users\newbi\source\repos\ShopStationery\BTL\bin\PagedList.xml
+C:\Users\newbi\source\repos\ShopStationery\BTL\bin\PagedList.Mvc.xml

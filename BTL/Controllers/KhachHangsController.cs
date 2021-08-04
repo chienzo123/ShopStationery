@@ -148,5 +148,6 @@ namespace BTL.Controllers
             list = query.ToList();
             return PartialView(list);
         }
+
     }
 }

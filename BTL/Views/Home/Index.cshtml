@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-@if (@Session["TenKH"] != null)
+@*@if (@Session["TenKH"] != null)
 {
     <script>
                     function slogin() {
@@ -9,7 +9,7 @@
                     }
                     slogin();
     </script>
-}
+}*@
 <!-- Nav Section Begin -->
 @{ Html.RenderAction("_Nav", "Home");}
 <!-- Nav Section End -->

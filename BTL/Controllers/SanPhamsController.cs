@@ -45,7 +45,7 @@ namespace BTL.Controllers
                     break;
             }
             int pageNumber = (page ?? 1);
-            int pageSize = 16;
+            int pageSize = 12;
             return View(sanphams.ToPagedList(pageNumber,pageSize));
         }
 
