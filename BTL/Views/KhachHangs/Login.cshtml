@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Login";
+    
 }
 
 
@@ -11,7 +12,7 @@
         <div class="wrap_background_aside margin-bottom-40 page_login">
             <div class="heading-bar">
                 <h1 class="title_page mb-0">Đăng nhập tài khoản</h1>
-                <p class="mb-0">Bạn chưa có tài khoản <a href="@Url.Action("DangKy","KhachHangs")" class="btn-link-style btn-register" style="text-decoration: underline; "> Đăng ký tại đây</a></p>
+                <p class="mb-0">Bạn chưa có tài khoản <a href="@Url.Action("Registers","KhachHangs")" class="btn-link-style btn-register" style="text-decoration: underline; "> Đăng ký tại đây</a></p>
             </div>
             <div class="row">
                 <div class="col-12 col-md-6 offset-md-3 py-3">
@@ -32,7 +33,7 @@
 
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" style="height: 40.25px; width: 450px; background: #f5df4d;color:#212529;" name="submit" class="btn btn-primary" value="Đăng nhập" />
+                                        <input type="submit" onclick="loginok()" style="height: 40.25px; width: 450px; background: #f5df4d;color:#212529;" name="submit" class="btn btn-primary" value="Đăng nhập" />
                                     </div>
                                 }
                                 @if (ViewBag.Error != null)

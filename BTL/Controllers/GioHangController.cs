@@ -75,14 +75,16 @@ namespace BTL.Controllers
         {
             var jsonGioHang = new JavaScriptSerializer().Deserialize<List<ChiTietGioHang>>(GioHangdata);
             var sessionGioHang = (List<ChiTietGioHang>)Session[GioHangSession];
-
+            SanPhamDao check = new SanPhamDao();
             foreach (var item in sessionGioHang)
             {
                 foreach (var jitem in jsonGioHang)
                 {
                     if (item.SP.MaSP == jitem.SP.MaSP)
                     {
-                        item.SoLuong = jitem.SoLuong;
+                        SanPham spcheck = check.ViewDetail(item.SP.MaSP);
+                        if (spcheck.SoLuong >= jitem.SoLuong)
+                            item.SoLuong = jitem.SoLuong;
                     }
                 }
             }

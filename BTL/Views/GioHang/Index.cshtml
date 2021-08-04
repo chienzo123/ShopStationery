@@ -14,6 +14,7 @@
 
 <section class="shoping-cart spad">
     <div class="container">
+        <h3 class="text-success"><i class="fas fa-check-double pr-3"></i>Sau khi sửa số lượng vui lòng bấm cập nhật để biết giá chính xác!!!</h3>
         <div class="row">
             @if (@Model.Count > 0)
             {
@@ -53,7 +54,7 @@
                     </td>
 
                     <td class="shoping__cart__total">
-                        @string.Format("{0:#,##0}", tongtien)
+                        @string.Format("{0:#,##0}", item.SoLuong * (int)item.SP.Gia)
 
                     </td>
                     <td><a href="#" data-id="@item.SP.MaSP" class="Xoa1SP">Xoá</a></td>

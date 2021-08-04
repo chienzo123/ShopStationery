@@ -56,7 +56,7 @@
         </div>
         <div class="featured__item__text">
             <h6><a href="@Url.Action("Detail", "SanPhams", new { id = item.MaSP })">@Html.DisplayFor(modelItem => item.TenSP)</a></h6>
-            <h5>@Html.DisplayFor(modelItem => item.Gia)</h5>
+            <h5>@Html.DisplayFor(modelItem => item.Gia) VND</h5>
         </div>
     </div>
 
@@ -67,7 +67,7 @@
         </div>
     </div>
 </section>
-<div class="container py-2 card border-0 mt-5">
+<div class="container py-2 card border-0 mt-5" >
     <div class="row">
         <div class="col-12">
             <h2 class="heading-bar__title ">
@@ -77,16 +77,16 @@
                 <div class="col-12 col-md-5">
                     <img src="~/wwwroot/images/section_pro_banner.jpg">
                 </div>
-                <div class="col-12 col-md-7">
-                    <div class="categories__slider owl-carousel">
+                <div class="col-12 col-md-7 ">
+                    <div class="categories__slider owl-carousel ">
                         @foreach (var item1 in Model.Take(4))
                         {
                     <a href="@Url.Action("Detail", "SanPhams", new { id = item1.MaSP })">
-                        <div class="col-lg-3">
-                            <div class="categories__item set-bg" style="width:100px;height:270px">
+                        <div class="col-lg-3 border-right">
+                            <div class="categories__item set-bg " style="width:100px;height:200px">
                                 @{ string ImagePath1 = "~/wwwroot/images/" + item1.Anh;}
 
-                                <img src="@Url.Content(ImagePath1)" height="270" />
+                                <img src="@Url.Content(ImagePath1)" height="200"  />
                             </div>
                         </div>
                     </a>

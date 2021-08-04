@@ -54,9 +54,18 @@ namespace BTL.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.TaiKhoans.Add(taiKhoan);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if(taiKhoan.Quyen.ToString() == "Giám đốc")
+                {
+                    ViewBag.Error = "không thể thêm giám đốc mới";
+                    
+                }
+                else
+                {
+                    db.TaiKhoans.Add(taiKhoan);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                
             }
 
             return View(taiKhoan);

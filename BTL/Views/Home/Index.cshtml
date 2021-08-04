@@ -1,7 +1,15 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+@if (@Session["TenKH"] != null)
+{
+    <script>
+                    function slogin() {
+                        alert("Đăng nhập thành công!")
+                    }
+                    slogin();
+    </script>
+}
 <!-- Nav Section Begin -->
 @{ Html.RenderAction("_Nav", "Home");}
 <!-- Nav Section End -->

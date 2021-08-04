@@ -13,6 +13,7 @@ namespace BTL.Controllers
     public class KhachHangsController : Controller
     {
         private Model1 db = new Model1();
+        bool check = false;
 
         // GET: KhachHangs
         public ActionResult Index()
@@ -70,10 +71,13 @@ namespace BTL.Controllers
                     Session["Email"] = user.FirstOrDefault().Email;
                     Session["DienThoai"] = user.FirstOrDefault().DienThoai;
                     Session["Diachi"] = user.FirstOrDefault().DiaChi;
+                    
                     return RedirectToAction("Index", "Home");
+                    
                 }
                 else
                 {
+                    
                     ViewBag.Error = "Tài khoản hoặc mặt khẩu không chính xác";
                 }
             }

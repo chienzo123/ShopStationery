@@ -4,19 +4,23 @@
     ViewBag.Title = "ChiTiet";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <section class="signup page_customer_account section">
     <div class="container card p-3">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-lg-3 col-left-ac">
                 <div class="block-account">
                     <h5 class="title-account">Trang tài khoản</h5>
+                    @if (@Session["TenKH"] != null)
+                    {
+                
                     <p>
                         Xin chào, <span style="color:#ec1c24;">@Session["TenKH"]</span>&nbsp;!
                     </p>
-                    <a href="@Url.Action( "Logout", "KhachHangs")" class="text-waring" style="font-size: 13px; color: black;">Đăng xuất</a>
+                    <a href="@Url.Action("Logout", "KhachHangs")" class="text-waring" style="font-size: 13px; color: black;">Đăng xuất</a>
                     <br/>
-                    <a href="@Url.Action( "Edit", "KhachHangs",new {id =Session["MaKH"] })" class="text-waring" style="font-size: 13px; color: black;">Chỉnh sửa thông tin</a>
-
+                    <a href="@Url.Action("Edit", "KhachHangs", new { id = Session["MaKH"] })" class="text-waring" style="font-size: 13px; color: black;">Chỉnh sửa thông tin</a>
+                    }
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-lg-9 col-right-ac">
