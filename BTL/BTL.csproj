@@ -52,6 +52,12 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -331,6 +337,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -360,13 +367,20 @@
     <Content Include="wwwroot\Images\2_fd6c4b3619ec49c2b09805bcdef32d2f.jpg" />
     <Content Include="wwwroot\Images\3.jpg" />
     <Content Include="wwwroot\Images\6_4d85900aedce45f2a9bca9dbcc2f1d24_6b5f045deee04159bd1dfcbfc29f3a00.jpg" />
+    <Content Include="wwwroot\Images\b230.jpg" />
+    <Content Include="wwwroot\Images\b231.jpg" />
+    <Content Include="wwwroot\Images\butbi038.jpg" />
+    <Content Include="wwwroot\Images\butda321.png" />
+    <Content Include="wwwroot\Images\but_bi_cao_cap_flexoffice_fo-067-vn_can_den_8.jpg" />
     <Content Include="wwwroot\Images\but_da_quang_thien_long_hl-07__2_.jpg" />
     <Content Include="wwwroot\Images\but_long_bang_thien_long_wb-02__10_.jpg" />
     <Content Include="wwwroot\Images\but_long_bang_thien_long_wb-03__2_.jpg" />
     <Content Include="wwwroot\Images\but_long_dau_biz-pm01-02.jpg" />
+    <Content Include="wwwroot\Images\casio211.png" />
     <Content Include="wwwroot\Images\e2003-01-d_07c944831c674a9c8a548467f0611407_0565923fdb6e4240a28d900842ad9216.jpg" />
     <Content Include="wwwroot\Images\e2005-01-d_f41c49a7cf6749108adbcf05016543ea_10a35aa142404ef59615f88b4ceccd6a.jpg" />
     <Content Include="wwwroot\Images\e2007-01-b_9bbf20a938994356a1b7a0b492aad107_8934f18787c04a3eaf2feb3553b3cf9d.jpg" />
+    <Content Include="wwwroot\Images\e2016.jpg" />
     <Content Include="wwwroot\Images\fo-059vn_ba14a19b86144bfeb7858c0d305e4212 %281%29.jpg" />
     <Content Include="wwwroot\Images\fo-059vn_ba14a19b86144bfeb7858c0d305e4212.jpg" />
     <Content Include="wwwroot\Images\footer_infor.png" />
@@ -619,6 +633,7 @@
     <Content Include="Views\KhachHangs\Edit.cshtml" />
     <Content Include="Views\Home\_Sec1.cshtml" />
     <Content Include="Views\KhachHangs\_ChiTietDonHang.cshtml" />
+    <Content Include="Views\SanPhams\_SideBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,10 +1,16 @@
-﻿@model IEnumerable<BTL.Models.SanPham>
+﻿@model PagedList.IPagedList<BTL.Models.SanPham>
+@using PagedList.Mvc;
+
 @{ ViewBag.Title = "Index"; }
 <!-- Nav Section Begin -->
 @{ Html.RenderAction("_Nav", "Home");}
 <!-- Nav Section End -->
 <!-- Product GIrd Section Begin -->
+@if (Model.Count > 0)
+{
+    <section class="featured spad">
 
+<<<<<<< HEAD
 <section class="featured spad">
 
     <div class="container">
@@ -94,5 +100,60 @@
        
     </div>
 </section>
+=======
+        <div class="container">
+            <div class="sidebar__item" style="float:left;width:16%;">
+                <div class="latest-product__text">
+                    <h4>Sản phẩm</h4>
+                    @{ Html.RenderAction("_SideBar", "SanPhams", new { danhmuchientai = Model.First().MaDanhMuc }); }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-5">
+                    <div class="filter__sort">
+                        <span>Sắp xếp theo</span>
+                        &nbsp;&nbsp;&nbsp;
+                        <a href=@Url.Action("Index", new { sortOrder = ViewBag.SapTheoTen }) style="color:black;" }>Tên</a>
+                        &nbsp;&nbsp;&nbsp;
+                        <a href=@Url.Action("Index", new { sortOrder = ViewBag.Gia }) style="color:black;">Giá</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row featured__filter">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                        <div class="featured__item">
+                            <div class="featured__item__pic set-bg" style="height:220px">
+                                @{ string ImagePath = "~/wwwroot/images/" + item.Anh;}
+
+                                <img src="@Url.Content(ImagePath)" />
+                                <ul class="featured__item__pic__hover">
+                                    <li><a href=@Url.Action("ThemSanPham","GioHang",new { MaSP = item.MaSP , SoLuong = 1 })><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text">
+                                <h6><a href="@Url.Action("Detail", "SanPhams", new { id = item.MaSP })">@Html.DisplayFor(modelItem => item.TenSP)</a></h6>
+                                <h5>@Html.DisplayFor(modelItem => item.Gia)</h5>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+
+            </div><div>
+                Trang @(Model.PageCount< Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+            </div>
+        </div>
+    </section>
+}
+else
+{
+    <div class="alert alert-danger" role="alert">Không có kết quả phù hợp !</div> 
+}
+>>>>>>> 46f477a446b3daabf1fcd2d3d6eb0f00faa12c87
 
 <!-- Product Section End -->
