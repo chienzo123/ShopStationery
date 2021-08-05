@@ -1,61 +1,116 @@
-﻿@model IEnumerable<BTL.Areas.Admin.Modal.ChiTietDonHang>
+﻿@*@model IEnumerable<BTL.Areas.Admin.Modal.DonHang>*@
+@model IEnumerable<BTL.Areas.Admin.Modal.ChiTietDonHang>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var item = Model.ToArray()[0];
+    List<int> a = new List<int>();
+    
 }
 
 <h2>Chi tiết đơn hàng</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            Tên người nhận
-        </th>
-        <th>
-           Tên sản phẩm
-        </th>
-        <th>
-            Số lượng mua
-        </th>
-        <th>
-            Ảnh
-        </th>
-        
-        <th>
-            Giá
-        </th>
-      
-    </tr>
+<form>
+   
+        <div class="form-row">
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DonHang.TenNguoiNhan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SanPham.TenSP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SoLuongMua)
-            </td>
-            <td>
-                @{
-                    string ImagePath = "~/Areas/Admin/Alink/Images/" + item.Anh;
-                }
-                <img src="@Url.Content(ImagePath)" width="100" height="100" class="img-thumbnail" />
-            </td>
-           
-            <td>
-                @Html.DisplayFor(modelItem => item.Gia)
-            </td>
-            
-        </tr>
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Tên người nhận</label>
+                <input type="email" class="form-control" id="inputEmail4" value="@item.DonHang.TenNguoiNhan" readonly>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Số điện thoại người nhận</label>
+                <input type="text" class="form-control" id="inputPassword4" value="@item.DonHang.SDTNguoiNhan" readonly>
+            </div>
+
+        </div>
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Địa chỉ nhận</label>
+                <input type="email" class="form-control" id="inputEmail4" value="@item.DonHang.DiaChiNhan" readonly>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Email</label>
+                <input type="text" class="form-control" id="inputPassword4" value="@item.DonHang.Email" readonly>
+            </div>
+        </div>
+    
+    
+        <table class="table">
+            <tr>
+
+                <th>
+                    Tên sản phẩm
+                </th>
+                <th>
+                    Số lượng mua
+                </th>
+                <th>
+                    Ảnh
+                </th>
+
+                <th>
+                    Giá
+                </th>
+                <th>
+                    Thành tiền
+                </th>
+
+            </tr>
+            @foreach (var item1 in Model)
+            {
+
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item1.SanPham.TenSP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item1.SoLuongMua)
+                    </td>
+                    <td>
+                        @{
+                            string ImagePath = "~/Areas/Admin/Alink/Images/" + item1.Anh;
+                        }
+                        <img src="@Url.Content(ImagePath)" width="100" height="100" class="img-thumbnail" />
+                    </td>
+
+                    <td >
+                        @Html.DisplayFor(modelItem => item1.Gia)
+                    </td>
+                    <td >
+                        <p id="giatien">  @(item1.Gia * item1.SoLuongMua)</p> 
+                    </td>
+                </tr>
+                               a.Add(Convert.ToInt32(item1.Gia * item1.SoLuongMua));
+                            }
+
+            </table>
+    
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            <label for="inputCity">Tổng giá</label>
+            <input type="text" class="form-control" id="inputPassword4" value="@a.Sum()" readonly>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputState">Tình trạng</label>
+            <input type="text" class="form-control" id="inputPassword4" value="@item.DonHang.TinhTrang" readonly>
+        </div>
+
+    </div>
+
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Trở laị trang đơn hàng", "Index")</button>
+</form>
+
+<script>
+    let x = document.getElementById("giatien");
+    console.log(x);
+    document.getElementById("inputCity").innerHTML = "20000";
+    function myFunc(a, b) {
+        return a + b;
     }
 
-</table>
-<button type="button" class="btn btn-outline-dark">@Html.ActionLink("Trở laị trang đơn hàng", "Index")</button>
+    
+</script>

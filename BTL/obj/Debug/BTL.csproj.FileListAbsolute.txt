@@ -246,7 +246,6 @@ D:\Lập Trình Ứng Dụng trên web\BTL\ShopStationery\BTL\bin\roslyn\vbc.exe
 D:\Lập Trình Ứng Dụng trên web\BTL\ShopStationery\BTL\bin\roslyn\vbc.rsp
 D:\Lập Trình Ứng Dụng trên web\BTL\ShopStationery\BTL\bin\roslyn\VBCSCompiler.exe
 D:\Lập Trình Ứng Dụng trên web\BTL\ShopStationery\BTL\bin\roslyn\VBCSCompiler.exe.config
-D:\Lập Trình Ứng Dụng trên web\BTL\ShopStationery\BTL\obj\Debug\BTL.csproj.AssemblyReference.cache
 C:\Users\newbi\Downloads\ShopStationery-master\ShopStationery-master\ShopStationery\BTL\bin\BTL.dll.config
 C:\Users\newbi\Downloads\ShopStationery-master\ShopStationery-master\ShopStationery\BTL\bin\BTL.dll
 C:\Users\newbi\Downloads\ShopStationery-master\ShopStationery-master\ShopStationery\BTL\bin\BTL.pdb
@@ -504,3 +503,7 @@ C:\Users\newbi\source\repos\ShopStationery\BTL\bin\PagedList.dll
 C:\Users\newbi\source\repos\ShopStationery\BTL\bin\PagedList.Mvc.dll
 C:\Users\newbi\source\repos\ShopStationery\BTL\bin\PagedList.xml
 C:\Users\newbi\source\repos\ShopStationery\BTL\bin\PagedList.Mvc.xml
+D:\Lập Trình Ứng Dụng trên web\BTL\ShopStationery\BTL\bin\PagedList.dll
+D:\Lập Trình Ứng Dụng trên web\BTL\ShopStationery\BTL\bin\PagedList.Mvc.dll
+D:\Lập Trình Ứng Dụng trên web\BTL\ShopStationery\BTL\bin\PagedList.xml
+D:\Lập Trình Ứng Dụng trên web\BTL\ShopStationery\BTL\bin\PagedList.Mvc.xml

@@ -13,7 +13,7 @@ namespace BTL.Controllers
     public class KhachHangsController : Controller
     {
         private Model1 db = new Model1();
-        bool check = false;
+      
 
         // GET: KhachHangs
         public ActionResult Index()
@@ -66,6 +66,7 @@ namespace BTL.Controllers
                  u.MatKhau.Equals(matkhau)).ToList();
                 if (user.Count() > 0)
                 {
+                    
                     Session["TenKH"] = user.FirstOrDefault().TenKH;
                     Session["MaKH"] = user.FirstOrDefault().MaKH;
                     Session["Email"] = user.FirstOrDefault().Email;

@@ -19,7 +19,7 @@ namespace BTL.Areas.Admin.Controllers
         {
             return View(db.DonHangs.ToList());
         }
-
+       
         // GET: Admin/DonHangs/Details/5
         public ActionResult Details(int? id)
         {

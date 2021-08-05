@@ -12,6 +12,7 @@ namespace BTL.Controllers
         private Model1 db = new Model1();
         public ActionResult Index()//Trang chủ
         {
+           
             return View();
         }
 
