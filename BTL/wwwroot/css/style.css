@@ -26,7 +26,7 @@ a:hover,
 a:focus {
 	text-decoration: none;
 	outline: none;
-	color: #ffffff;
+	color: red;
 }
 
 ul,
