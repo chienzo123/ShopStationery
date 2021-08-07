@@ -47,16 +47,20 @@ namespace BTL.Areas.Admin.Controllers
                 
                 var user = db.TaiKhoans.Where(u => u.TaiKhoan1.Equals(TaiKhoan1) && u.MatKhau.Equals(MatKhau)).ToList();
 
-                if (user.FirstOrDefault().Khoa.ToString() == "True")
-                {
-                    return RedirectToAction("Block");
-                }
+               
                 if (user.Count() > 0  )
+                    {
+                    if (user.FirstOrDefault().Khoa.ToString() == "True")
+                    {
+                        return RedirectToAction("Block");
+                    }
+                    else
                     {
                         Session["HoTen"] = user.FirstOrDefault().TenNhanVien;
                         Session["ChucVu"] = user.FirstOrDefault().Quyen;
                         Session["idUser"] = user.FirstOrDefault().MaTK;
                         return RedirectToAction("Index");
+                    }
                     }
                     
                     else

@@ -2,7 +2,7 @@
         
 <div class="latest-product__slider owl-carousel">
     <div class="latest-prdouct__slider__item">
-        @foreach (var item in Model.Take(3))
+        @foreach (var item in Model.Take(2))
         {
             <a href="@Url.Action("Detail", "SanPhams", new { id = item.MaSP })" class="latest-product__item">
                 <div>

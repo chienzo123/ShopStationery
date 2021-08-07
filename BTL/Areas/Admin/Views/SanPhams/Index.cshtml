@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BTL.Areas.Admin.Modal.SanPham>
+﻿@model PagedList.IPagedList<BTL.Areas.Admin.Modal.SanPham>
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Index";
@@ -6,32 +7,36 @@
 }
 
 <h2>Sản Phẩm</h2>
-
+@using (Html.BeginForm())
+{
+    <p style="text-align:right">
+        Tìm tên sản phẩm @Html.TextBox("SearchString", ViewBag.CurenFillter as string)
+        <input type="submit" value="Tìm" />
+    </p>
+}
 <p>
     @Html.ActionLink("Thêm mới", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.DanhMuc.TenDanhMuc)
+            Tên danh mục
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TenSP)
+            @Html.ActionLink("Tên sản phẩm", "Index", new { sortOrder = ViewBag.SapTheoTen, curenFillter = ViewBag.CurenFillter })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Gia)
+            @Html.ActionLink("Giá", "Index", new { sortOrder = ViewBag.SapTheoGia, curenFillter = ViewBag.CurenFillter })
+        </th>
+        
+        <th>
+            Hình ảnh
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MoTa)
+            Loại
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Anh)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Loai)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SoLuong)
+            Số lượng
         </th>
         <th></th>
     </tr>
@@ -48,9 +53,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Gia)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MoTa)
-            </td>
+            
             <td>
                 @{
                     string ImagePath = "~/Areas/Admin/ALink/Images/" + item.Anh;
@@ -73,3 +76,13 @@
     }
 
 </table>
+<br />
+Trang  @(Model.PageCount  <  Model.PageNumber  ?  0  :  Model.PageNumber)  /  @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+new
+{
+   page,
+   sortOrder = ViewBag.CurrentSort,
+   currentFilter = ViewBag.CurrentFilter
+}))

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using BTL.Areas.Admin.Modal;
+using PagedList;
 
 namespace BTL.Areas.Admin.Controllers
 {
@@ -15,10 +16,44 @@ namespace BTL.Areas.Admin.Controllers
         private Model1 db = new Model1();
 
         // GET: Admin/SanPhams
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString, string currentFilter, int? page)
         {
+            ViewBag.CurrentSort = sortOrder;//Biến  lấy  yêu  cầu  sắp  xếp  hiện  tại
+            ViewBag.SapTheoTen = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.SapTheoGia = sortOrder == "Gia" ? "gia_desc" : "Gia";
+            //Lấy  giá  trị  của  bô  lọc  dữ  liệu  hiện  tại
+            if (searchString != null)
+            {
+                page = 1;  //Trang  đầu  tiên
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+
             var sanPhams = db.SanPhams.Include(s => s.DanhMuc);
-            return View(sanPhams.ToList());
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                sanPhams = sanPhams.Where(p => p.TenSP.Contains(searchString));
+            }
+
+            //Sắp  xếp
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    sanPhams = sanPhams.OrderByDescending(s => s.TenSP); break;
+                case "Gia":
+                    sanPhams = sanPhams.OrderBy(s => s.Gia); break;
+                case "gia_desc":
+                    sanPhams = sanPhams.OrderByDescending(s => s.Gia); break;
+                default:
+                    sanPhams = sanPhams.OrderBy(s => s.TenSP); break;
+            }
+
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(sanPhams.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Admin/SanPhams/Details/5
@@ -87,7 +122,7 @@ namespace BTL.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             SanPham sanPham = db.SanPhams.Find(id);
-            
+
             if (sanPham == null)
             {
                 return HttpNotFound();
