@@ -97,7 +97,7 @@ namespace BTL.Areas.Admin.Controllers
                     if (f != null && f.ContentLength > 0)
                     {
                         string FileName = System.IO.Path.GetFileName(f.FileName);
-                        string UploadPath = Server.MapPath("~/Areas/Admin/ALink/Images/" + FileName);
+                        string UploadPath = Server.MapPath("~/wwwroot/Images/" + FileName);
                         f.SaveAs(UploadPath);
                         sanPham.Anh = FileName;
                     }
@@ -148,7 +148,7 @@ namespace BTL.Areas.Admin.Controllers
                     if (f != null && f.ContentLength > 0)
                     {
                         string FileName = System.IO.Path.GetFileName(f.FileName);
-                        string UploadPath = Server.MapPath("~/Areas/Admin/ALink/Images/" + FileName);
+                        string UploadPath = Server.MapPath("~/wwwroot/images/" + FileName);
                         f.SaveAs(UploadPath);
                         sanPham.Anh = FileName;
                     }

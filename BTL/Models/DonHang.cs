@@ -32,7 +32,7 @@
 
         [StringLength(50)]
         [DisplayName("Email")]
-        [EmailAddress]
+        [Required(ErrorMessage = "Email không được để trống")]
         public string Email { get; set; }
 
         [StringLength(20)]

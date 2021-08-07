@@ -148,6 +148,7 @@
     <Compile Include="Areas\Admin\Modal\Model1.cs" />
     <Compile Include="Areas\Admin\Modal\SanPham.cs" />
     <Compile Include="Areas\Admin\Modal\TaiKhoan.cs" />
+    <Compile Include="Controllers\DonHangsController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KhachHangsController.cs" />
@@ -296,27 +297,8 @@
     <Content Include="Areas\Admin\ALink\Css\metisMenu\Gruntfile.js" />
     <Content Include="Areas\Admin\ALink\Css\metisMenu\src\metisMenu.css" />
     <Content Include="Areas\Admin\ALink\Css\metisMenu\src\metisMenu.js" />
-    <Content Include="Areas\Admin\ALink\Images\1_75f9a54875ce43a98b4fb8be3ef6ffe1.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\1_8e9da82cde14443e83c6fcb45e7ace96.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\25_683210149e34429fbae334b848613400_dd8ac0ff2bb84f09b10680f9cadf4c5f.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\2_1ef9d2b0cbb041319cc8d88f4f3d3e19.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\2_fd6c4b3619ec49c2b09805bcdef32d2f.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\6_4d85900aedce45f2a9bca9dbcc2f1d24_6b5f045deee04159bd1dfcbfc29f3a00.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\but_da_quang_thien_long_hl-07__2_.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\but_long_bang_thien_long_wb-02__10_.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\but_long_bang_thien_long_wb-03__2_.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\but_long_dau_biz-pm01-02.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\e2003-01-d_07c944831c674a9c8a548467f0611407_0565923fdb6e4240a28d900842ad9216.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\e2005-01-d_f41c49a7cf6749108adbcf05016543ea_10a35aa142404ef59615f88b4ceccd6a.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\e2007-01-b_9bbf20a938994356a1b7a0b492aad107_8934f18787c04a3eaf2feb3553b3cf9d.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\fo-059vn_ba14a19b86144bfeb7858c0d305e4212 %281%29.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\fo-059vn_ba14a19b86144bfeb7858c0d305e4212.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\keo_duc_150y_1cuon_194b50346de94ff48f06309b22816020.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\keo_kho_thien_long_-_diem_10_g-014__7_.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\n_kim_tuyen_elmer_s_177.4_ml_do___dung_dich_elmer_s_tao_slime_258.77ml_a90c91af274c4bec9f8b4cc259877553_grande.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\tl-075_ae78f89101f44c268f5776f09bc60f55.jpg" />
-    <Content Include="Areas\Admin\ALink\Images\tải xuống.png" />
-    <Content Include="Areas\Admin\ALink\Images\untitled-1_0b2d4ddbbca749779ca73e8b48bfc03e.jpg" />
+    <Content Include="wwwroot\Images\2_fd6c4b3619ec49c2b09805bcdef32d2f - Copy.jpg" />
+    <Content Include="wwwroot\Images\tải xuống.png" />
     <Content Include="Areas\Admin\Scripts\bootstrap.js" />
     <Content Include="Areas\Admin\Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Scripts\GioHang.js" />
@@ -609,16 +591,11 @@
     <Content Include="wwwroot\sass\_shoping-cart.scss" />
     <Content Include="wwwroot\sass\_sidebar.scss" />
     <Content Include="wwwroot\sass\_variable.scss" />
-    <Content Include="Views\GioHang\DatHang.cshtml" />
-    <Content Include="Views\GioHang\HoanThanh.cshtml" />
+    <Content Include="Views\DonHangs\HoanThanh.cshtml" />
     <Content Include="Views\GioHang\Index.cshtml" />
     <Content Include="Views\GioHang\_DatHang.cshtml" />
-    <Content Include="Views\Home\Acccount.cshtml" />
-    <Content Include="Views\Home\Caterogy.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Oder.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\_BestSeller.cshtml" />
@@ -636,6 +613,7 @@
     <Content Include="Views\Home\_Sec1.cshtml" />
     <Content Include="Views\KhachHangs\_ChiTietDonHang.cshtml" />
     <Content Include="Views\SanPhams\_SideBar.cshtml" />
+    <Content Include="Views\DonHangs\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

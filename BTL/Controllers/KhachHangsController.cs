@@ -62,8 +62,7 @@ namespace BTL.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = db.KhachHangs.Where(u => u.Email.Equals(email) &&
-                 u.MatKhau.Equals(matkhau)).ToList();
+                var user = db.KhachHangs.Where(u => u.Email.Equals(email) && u.MatKhau.Equals(matkhau)).ToList();
                 if (user.Count() > 0)
                 {
                     
@@ -72,7 +71,6 @@ namespace BTL.Controllers
                     Session["Email"] = user.FirstOrDefault().Email;
                     Session["DienThoai"] = user.FirstOrDefault().DienThoai;
                     Session["Diachi"] = user.FirstOrDefault().DiaChi;
-                    
                     return RedirectToAction("Index", "Home");
                     
                 }

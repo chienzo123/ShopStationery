@@ -12,6 +12,7 @@ namespace BTL.Controllers
     {
         // GET: GioHang
         private const string GioHangSession = "GioHangSession";
+        Model1 db = new Model1();
         public ActionResult Index()
         {
             var GioHang = Session[GioHangSession];
@@ -71,11 +72,17 @@ namespace BTL.Controllers
             }
             return RedirectToAction("");
         }
-        public ActionResult CapNhap(string GioHangdata)
+        public JsonResult CapNhap(string GioHangdata)
         {
             var jsonGioHang = new JavaScriptSerializer().Deserialize<List<ChiTietGioHang>>(GioHangdata);
             var sessionGioHang = (List<ChiTietGioHang>)Session[GioHangSession];
             SanPhamDao check = new SanPhamDao();
+            foreach (var item in jsonGioHang)
+            {
+                if (item.SoLuong == 0)
+                    sessionGioHang.RemoveAll(x => x.SP.MaSP == item.SP.MaSP);
+                Session[GioHangSession] = sessionGioHang;
+            }
             foreach (var item in sessionGioHang)
             {
                 foreach (var jitem in jsonGioHang)
@@ -94,6 +101,8 @@ namespace BTL.Controllers
                 status = true
             });
         }
+
+
 
         [HttpPost]
         public JsonResult Xoa(int MaSP)
@@ -118,45 +127,41 @@ namespace BTL.Controllers
             });
         }
 
-        public ActionResult DatHang()
+      
+        
+        public ActionResult Create()
         {
             return View();
         }
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult DatHang(string TenNguoiNhan, int SDTNguoiNhan, string DiaChiNhan, string Email)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "MaDH,TenNguoiNhan,SDTNguoiNhan,DiaChiNhan,Email")] DonHang donHang)
         {
-            var donHang = new DonHang();
-            donHang.TenNguoiNhan = TenNguoiNhan;
-            donHang.SDTNguoiNhan = SDTNguoiNhan;
-            donHang.DiaChiNhan = DiaChiNhan;
-            donHang.Email = Email;
-            donHang.TinhTrang = "Đang Xử Lý";
-
-            var id = new DonHangDao().DatHang(donHang);
-            var ChiTietDao = new ChiTietDatHangDao();
-            var GioHang = (List<ChiTietGioHang>)Session[GioHangSession];
-            foreach (var item in GioHang)
+            if (ModelState.IsValid)
             {
-                var ChiTiet = new ChiTietDonHang();
-                ChiTiet.MaSP = item.SP.MaSP;
-                ChiTiet.MaDH = donHang.MaDH;
-                ChiTiet.SoLuongMua = item.SoLuong;
-                ChiTiet.Anh = item.SP.Anh;
-                ChiTiet.TenSP = item.SP.TenSP;
-                ChiTiet.Gia = item.SP.Gia;
+                donHang.TinhTrang = "Đang Xử Lý";
+                var id = new DonHangDao().DatHang(donHang);
+                var ChiTietDao = new ChiTietDatHangDao();
+                var GioHang = (List<ChiTietGioHang>)Session[GioHangSession];
+                foreach (var item in GioHang)
+                {
+                    var ChiTiet = new ChiTietDonHang();
+                    ChiTiet.MaSP = item.SP.MaSP;
+                    ChiTiet.MaDH = donHang.MaDH;
+                    ChiTiet.SoLuongMua = item.SoLuong;
+                    ChiTiet.Anh = item.SP.Anh;
+                    ChiTiet.TenSP = item.SP.TenSP;
+                    ChiTiet.Gia = item.SP.Gia;
 
-                ChiTietDao.DatHang(ChiTiet);
+                    ChiTietDao.DatHang(ChiTiet);
+                }
+                db.DonHangs.Add(donHang);
+                db.SaveChanges();
+              
             }
-
             return Redirect("/GioHang/HoanThanh");
         }
-        public ActionResult HoanThanh()
-        {
-            var sessionGioHang = (List<ChiTietGioHang>)Session[GioHangSession];
-            sessionGioHang.RemoveAll(x => x.SoLuong > 0);
-            Session[GioHangSession] = sessionGioHang;
-            return View();
-        }
-       
+
     }
 }
