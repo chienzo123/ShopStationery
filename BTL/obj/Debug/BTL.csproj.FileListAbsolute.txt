@@ -507,4 +507,3 @@ D:\Lập Trình Ứng Dụng trên web\BTL\ShopStationery\BTL\bin\PagedList.dll
 D:\Lập Trình Ứng Dụng trên web\BTL\ShopStationery\BTL\bin\PagedList.Mvc.dll
 D:\Lập Trình Ứng Dụng trên web\BTL\ShopStationery\BTL\bin\PagedList.xml
 D:\Lập Trình Ứng Dụng trên web\BTL\ShopStationery\BTL\bin\PagedList.Mvc.xml
-D:\Lập Trình Ứng Dụng trên web\BTL\ShopStationery\BTL\obj\Debug\BTL.csproj.AssemblyReference.cache
