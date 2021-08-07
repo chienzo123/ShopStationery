@@ -113,6 +113,19 @@ namespace BTL.Areas.Admin.Controllers
         {
             DonHang donHang = db.DonHangs.Find(id);
             db.DonHangs.Remove(donHang);
+            List<ChiTietDonHang> ctdh = new List<ChiTietDonHang>();
+            foreach(var item in db.ChiTietDonHangs)
+            {
+                if(item.MaDH == id)
+                {
+                    ctdh.Add(item);
+                }
+            }
+            foreach(var item in ctdh)
+            {
+                db.ChiTietDonHangs.Remove(item);
+            }
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }
